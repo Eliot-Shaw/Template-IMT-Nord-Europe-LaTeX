@@ -1,0 +1,38 @@
+\newcommand{\imtnepagedegarde}[3]{%
+  \clearpage
+  \newgeometry{top=25pt, bottom=30pt, inner=20pt, outer=30pt}
+  \thispagestyle{empty} % Pas de header, footer ou numéro de page
+
+  \begin{minipage}[c]{0.2\textwidth}
+    {\large \today\par % Date d'aujourd'hui en noir
+    \large {#3}\par} % Auteur(s) du document en noir
+    \vspace{1cm}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.6\textwidth}
+    \begin{flushright}
+      \begin{tikzpicture}
+        \filldraw[draw=imtneAmbre,fill=imtneAmbre] (-3\imtneGetEltSize,0) -- (0,-3\imtneGetEltSize) -- (0\imtneGetEltSize,0) -- cycle;
+        \filldraw[draw=imtneCeleste,fill=imtneCeleste] (-2.24\imtneGetEltSize,-3\imtneGetEltSize) -- (0,-5.24\imtneGetEltSize) -- (0,-3\imtneGetEltSize) -- cycle;
+        \filldraw[draw=imtneMarine,fill=imtneMarine] (-5.24\imtneGetEltSize,0) -- (-2.24\imtneGetEltSize,-3\imtneGetEltSize) -- (-5.24\imtneGetEltSize,-3\imtneGetEltSize) -- cycle;
+      \end{tikzpicture}
+    \end{flushright}
+  \end{minipage}
+  \vspace{25pt}
+  \\
+  {\color{imtneAmbreText}\fontsize{40}{48}\selectfont\bfseries \hspace{0pt} #1 \par}
+  \vspace{0.5cm}
+  {\color{imtneAmbreText}\Large\bfseries #2}
+
+  \vspace*{\fill}
+
+  \begin{tikzpicture}[overlay, remember picture]
+    \node[anchor=south west] at (current page.south west) {\includegraphics[height=5cm]{paper/figures/imtne.png}};
+    \node[anchor=south east] at (current page.south east) {\includegraphics[height=5.5cm]{paper/figures/eliot.pdf}};
+  \end{tikzpicture}
+  
+  \clearpage
+  \restoregeometry % Rétablir la géométrie par défaut
+\pagestyle{fancy}
+
+}
