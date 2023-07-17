@@ -1,0 +1,33 @@
+name: Mon action à chaque push
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build du fichier main.pdf
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Installer pdflatex
+        run: |
+          sudo apt-get install texlive-latex-base
+          sudo apt-get install texlive-fonts-recommended
+          sudo apt-get install texlive-fonts-extra
+          sudo apt-get install texlive-latex-extra
+      - name: Installer biber
+        run: sudo apt-get -y install biber
+      - name: Installer all langages to get french
+        run: sudo apt-get install -y texlive-lang-all
+      - name: Compiler le document LaTeX
+        run: |
+          pdflatex paper/main.tex
+          biber main.bbl
+          pdflatex paper/main.tex
+
+      - name: Sauvegarder le fichier main.pdf
+        uses: actions/upload-artifact@v2
+        with:
+          name: sortie
+          path: paper/main.pdf
