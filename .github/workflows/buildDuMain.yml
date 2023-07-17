@@ -10,12 +10,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Installer pdflatex
         run: |
           sudo apt-get install texlive-latex-base
+
+      - name: Installer pdflatex2
+        run: |
           sudo apt-get install texlive-fonts-recommended
+
+      - name: Installer pdflatex3
+        run: |
           sudo apt-get install texlive-fonts-extra
+          
+      - name: Installer pdflatex4
+        run: |
           sudo apt-get install texlive-latex-extra
+
       - name: Installer biber
         run: sudo apt-get -y install biber
       - name: Installer all langages to get french
