@@ -35,3 +35,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           files: "main.pdf"
+          path: ./
