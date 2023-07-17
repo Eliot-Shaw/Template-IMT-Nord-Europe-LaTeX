@@ -26,6 +26,7 @@
 \usepackage{tikz}
 \usepackage{adjustbox}
 
+
 \usepackage{paper/imtneStyles/imtneChapitre}
 \usepackage{paper/imtneStyles/imtnePageDeGarde}
 
@@ -68,6 +69,19 @@
 \newcommand{\authornamefooter}{Shaw E.}
 \fancyfoot[LO]{\authornamefooter}
 \fancyfoot[LE]{\authornamefooter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                      B I B L I O G R A P H Y                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[
+	style=numeric-comp,
+	sorting=none,
+	hyperref,
+	singletitle=true,
+	backend=biber]{biblatex}
+
+\addbibresource{paper/bib/bibliography.bib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                           M A C R O S                             %
