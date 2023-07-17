@@ -12,14 +12,14 @@ jobs:
     steps:
       - name: Installer pdflatex
         run: |
-          apt-get install texlive-latex-base
-          apt-get install texlive-fonts-recommended
-          apt-get install texlive-fonts-extra
-          apt-get install texlive-latex-extra
+          sudo apt-get install texlive-latex-base
+          sudo apt-get install texlive-fonts-recommended
+          sudo apt-get install texlive-fonts-extra
+          sudo apt-get install texlive-latex-extra
       - name: Installer biber
-        run: apt-get -y install biber
+        run: sudo apt-get -y install biber
       - name: Installer all langages to get french
-        run: apt-get install -y texlive-lang-all
+        run: sudo apt-get install -y texlive-lang-all
       - name: Compiler le document LaTeX
         run: |
           pdflatex paper/main.tex
