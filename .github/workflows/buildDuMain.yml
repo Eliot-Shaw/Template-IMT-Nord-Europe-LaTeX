@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: checkout repo
+        uses: actions/checkout@v2.3.4
       - name: trouver le path
-        run: sudo echo $(ls)
+        run: sudo cat paper/main.tex
 
       # - name: Mettre à jour les sources des paquets
       #   run: sudo apt-get update
