@@ -28,7 +28,7 @@ jobs:
       - name: Compiler le document LaTeX
         run: |
           pdflatex paper/main.tex 
-          biber main.bbl
+          biber main.bcf
           pdflatex paper/main.tex
 
       - name: Sauvegarder le fichier main.pdf
