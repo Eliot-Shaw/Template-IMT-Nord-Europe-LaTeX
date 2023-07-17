@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: apt upgrade
+      - name: test
         run: |
-          sudo apt-get upgrade
+          sudo apt-get install -y libxml2-utils
 
       - name: Installer pdflatex
         run: |
