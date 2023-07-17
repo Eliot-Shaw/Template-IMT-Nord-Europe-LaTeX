@@ -16,31 +16,22 @@ jobs:
       - name: Mettre à jour les sources des paquets
         run: sudo apt-get update
 
-      - name: Installer pdflatex
+      - name: Installer pdflatex, biber et all langages to get french
         run: |
           sudo apt-get install -y texlive-latex-base
-
-      - name: Installer pdflatex2
-        run: |
           sudo apt-get install -y texlive-fonts-recommended
-
-      - name: Installer pdflatex3
-        run: |
           sudo apt-get install -y texlive-fonts-extra
-
-      - name: Installer pdflatex4
-        run: |
           sudo apt-get install -y texlive-latex-extra
+          sudo apt-get -y install biber
+          sudo apt-get install -y texlive-lang-all
 
-      - name: Installer biber
-        run: sudo apt-get -y install biber
-      - name: Installer all langages to get french
-        run: sudo apt-get install -y texlive-lang-all
       - name: Compiler le document LaTeX
         run: |
-          pdflatex ./paper/main.tex
-          biber ./main.bbl
-          pdflatex ./paper/main.tex
+          pdflatex paper/main.tex 
+# generer les tempfiles pour biber
+          biber main.bbl
+# generer le pdf
+          pdflatex paper/main.tex
 
       - name: Sauvegarder le fichier main.pdf
         uses: actions/upload-artifact@v2
