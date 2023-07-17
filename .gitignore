@@ -4,3 +4,5 @@
 *.toc
 *.bcf
 *.xml
+*.bbl
+*.blg
