@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: trouver le path
+        run: sudo env
+
       - name: Mettre à jour les sources des paquets
         run: sudo apt-get update
 
