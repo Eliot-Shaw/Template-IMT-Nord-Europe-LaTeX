@@ -35,9 +35,9 @@ jobs:
         run: sudo apt-get install -y texlive-lang-all
       - name: Compiler le document LaTeX
         run: |
-          pdflatex ../paper/main.tex
-          biber ../main.bbl
-          pdflatex ../paper/main.tex
+          pdflatex ./paper/main.tex
+          biber ./main.bbl
+          pdflatex ./paper/main.tex
 
       - name: Sauvegarder le fichier main.pdf
         uses: actions/upload-artifact@v2
