@@ -29,10 +29,10 @@ jobs:
         run: |
           pdflatex paper/main.tex 
           biber main.bcf
-          pdflatex paper/main.tex
+          pdflatex paper/main.tex 
 
       - name: Sauvegarder le fichier main.pdf
         uses: actions/upload-artifact@v2
         with:
-          name: sortie
-          path: paper/build/
+          name: main.pdf
+          path: paper/
