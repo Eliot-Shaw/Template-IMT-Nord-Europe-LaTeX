@@ -10,21 +10,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    
+      - name: Mettre à jour les sources des paquets
+        run: sudo apt-get update
+        
       - name: Installer pdflatex
         run: |
-          sudo apt install -y texlive-latex-base
+          sudo apt-get install -y texlive-latex-base
 
       - name: Installer pdflatex2
         run: |
-          sudo apt install -y texlive-fonts-recommended
+          sudo apt-get install -y texlive-fonts-recommended
 
       - name: Installer pdflatex3
         run: |
-          sudo apt install -y texlive-fonts-extra
+          sudo apt-get install -y texlive-fonts-extra
 
       - name: Installer pdflatex4
         run: |
-          sudo apt install -y texlive-latex-extra
+          sudo apt-get install -y texlive-latex-extra
 
       - name: Installer biber
         run: sudo apt-get -y install biber
