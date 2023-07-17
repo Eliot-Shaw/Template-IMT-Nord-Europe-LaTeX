@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: apt upgrade
         run: |
-          ping 8.8.8.8
+          sudo apt-get upgrade
 
       - name: Installer pdflatex
         run: |
