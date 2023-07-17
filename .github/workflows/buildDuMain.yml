@@ -10,11 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-    
       - name: Mettre à jour les sources des paquets
         run: sudo apt-get update
-        
+
       - name: Installer pdflatex
         run: |
           sudo apt-get install -y texlive-latex-base
@@ -37,9 +35,9 @@ jobs:
         run: sudo apt-get install -y texlive-lang-all
       - name: Compiler le document LaTeX
         run: |
-          pdflatex paper/main.tex
-          biber main.bbl
-          pdflatex paper/main.tex
+          pdflatex ../paper/main.tex
+          biber ../main.bbl
+          pdflatex ../paper/main.tex
 
       - name: Sauvegarder le fichier main.pdf
         uses: actions/upload-artifact@v2
