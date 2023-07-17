@@ -10,25 +10,21 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: test
-        run: |
-          sudo apt-get install -y libxml2-utils
-
       - name: Installer pdflatex
         run: |
-          sudo apt-get install texlive-latex-base
+          sudo apt-get install -y texlive-latex-base
 
       - name: Installer pdflatex2
         run: |
-          sudo apt-get install texlive-fonts-recommended
+          sudo apt-get install -y texlive-fonts-recommended
 
       - name: Installer pdflatex3
         run: |
-          sudo apt-get install texlive-fonts-extra
+          sudo apt-get install -y texlive-fonts-extra
 
       - name: Installer pdflatex4
         run: |
-          sudo apt-get install texlive-latex-extra
+          sudo apt-get install -y texlive-latex-extra
 
       - name: Installer biber
         run: sudo apt-get -y install biber
