@@ -34,5 +34,4 @@ jobs:
       - name: Sauvegarder le fichier main.pdf
         uses: actions/upload-artifact@v2
         with:
-          with:
-            files: [ "main.pdf", ./ , !./tmp ]
+          files: [ "main.pdf", ./ , !./tmp ]
