@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: trouver le path
-        run: sudo env
+        run: sudo ls -la
 
       - name: Mettre à jour les sources des paquets
         run: sudo apt-get update
