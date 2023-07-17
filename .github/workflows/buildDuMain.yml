@@ -35,4 +35,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: sortie
-          path: paper/main.pdf
+          path: paper/build/
