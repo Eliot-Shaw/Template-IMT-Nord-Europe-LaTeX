@@ -1,4 +1,3 @@
-# Template-IMT-Nord-Europe-LaTeX
-Un template LaTeXpour les étudiants et professeurs (s'ils osent) correspondant aux couleurs et formes de l'IMT Nord Europe
-
-[Petit exemple](main.pdf)
+# Rapport de stage Victor Berhault
+Rapport de stage se basant sur la template de @eliotShaw
+voir rendu dans main.pdf

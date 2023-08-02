@@ -1,27 +1,40 @@
 \documentclass[a4paper,12pt]{report}
-
 % Packages et configuration du header
 \input{paper/header}
+\makenoidxglossaries
+\input{paper/content/Lexique}
 
 
 \begin{document}
-% Page de garde
-\imtnepagedegarde
-    {Template IMT Nord Europe} % Titre
-    {Sous le langage LaTeX} % Sous-titre
-    {SHAW Eliot} % Auteur
 
+% Page de garde
+
+\input{paper/content/PageDeGarde}
+     
+\todo{vrai page de garde pour rapport de stage} \\
+\todo{consignes : \url{https://partage.imt.fr/index.php/apps/onlyoffice/s/Rqx8xykyxNewzGN}}
+
+\input{paper/content/Remerciements}
+
+\todo{Rajouter que les données APC c'est que TH3 + MRS + SQY et pas tout le nuage (donc hébergent aussi d'autres trucs que les serveurs dns)}
+\pagebreak
 % Table des matières
 \tableofcontents
 
+\pagebreak
+\setlength{\parskip}{\baselineskip} %espace entre les paragraphes
+
 % Content
-\imtnechapitre{Les Animaux}
-\input{paper/content/lesAnimauxTerrestes}
-\input{paper/content/lesAnimauxMarins}
+\input{paper/content/Resume}
+\input{paper/content/Introduction}
+\input{paper/content/Contexte}
+\input{paper/content/Travaux}
+\input{paper/content/Acquis}
+\input{paper/content/Conclusion}
 
+\printnoidxglossaries
+\printbibliography[heading=bibintoc]
 
-\imtnechapitre{Deuxième Chapitre}
-
-
+\input{paper/content/Annexes}
 
 \end{document}

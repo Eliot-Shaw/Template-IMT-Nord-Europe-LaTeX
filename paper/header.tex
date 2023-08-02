@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
- 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                          P A C K A G E S                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -8,26 +8,29 @@
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lipsum}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{xspace}
-\usepackage{hyperref}
 \usepackage{changepage}
 \usepackage[kerning=true]{microtype}
 \usepackage{csquotes}
 \usepackage{tikzpagenodes}
-\usepackage{geometry}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{calc}
 \usepackage{tikz}
 \usepackage{adjustbox}
+\usepackage[toc]{glossaries}
+\usepackage{float}
+\usepackage[sorting=none]{biblatex}
+\usepackage{hyperref}
+\usepackage[toc,page]{appendix}
 
 \usepackage{paper/imtneStyles/imtneChapitre}
-\usepackage{paper/imtneStyles/imtnePageDeGarde}
+
+\addbibresource{paper/content/biblio.bib} %Import the bibliography file
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                            C O L O R S                            %
@@ -43,39 +46,39 @@
 %              G E O M E T R Y   A N D   W I D G E T S              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\geometry{
-  twoside=true,
-  head=42.09433pt,
-  paperwidth=8.5in,
-  paperheight=11in,
-  columnsep=2pc,
-  top=90pt,
-  bottom=65pt,
-  inner=50pt,
-  outer=50pt,
-  marginparwidth=2pc,
-  heightrounded
-}
+\usepackage[
+top             =   2.50cm,
+bottom          =   2.50cm,
+left            =   2.00cm,
+right           =   1.50cm,
+twoside         =   true,
+head            =   1.60cm,
+paperwidth      =   21.00cm,
+paperheight     =   29.70cm,
+marginparwidth  =   2pc,
+heightrounded   =   true
+]{geometry}
 
-\setitemize[1]{label=\textcolor{imtneCeleste}{\small\ding{228}}}
-\setitemize[2]{label=\textbullet}
+\setitemize[1]{label=\textbullet}
+\setitemize[2]{label=\bold{-}}
 \setenumerate[1]{font=\bf\color{imtneCeleste}}
 \setenumerate[2]{font=\color{imtneMarine}}
 
 \fancyhead[L]{\includegraphics[width=2cm]{paper/figures/imtne.png}}
 \fancyhead[R]{\rightmark}
 
-\newcommand{\authornamefooter}{Shaw E.}
+\newcommand{\authornamefooter}{Berhault V.}
 \fancyfoot[LO]{\authornamefooter}
 \fancyfoot[LE]{\authornamefooter}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                           M A C R O S                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\g}{Google Nearby Connections\xspace}
-\newcommand{\cl}{\textsc{ClickLeague}\xspace}
 \newcommand{\voidtext}{\xspace}
+
 
 \def\imtneGetEltSize{%
   \ifdim \paperwidth < \paperheight
@@ -98,3 +101,11 @@
 \newcommand{\todo}[1]{\annote{#1}{Todo}{imtneCeleste}}
 \newcommand{\td}{\annote{}{}{imtneAmbreText}}
 \newcommand{\note}[1]{\annote{#1}{Note}{imtneGris}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                            Hyphenation                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hyphenation{Prometheus}

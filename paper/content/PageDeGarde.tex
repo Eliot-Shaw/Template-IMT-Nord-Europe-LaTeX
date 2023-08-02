@@ -1,0 +1,52 @@
+  \clearpage
+  \newgeometry{top=30pt, bottom=30pt, inner=20pt, outer=30pt}
+  \thispagestyle{empty} % Pas de header, footer ou numéro de page
+
+  
+  \begin{flushright}
+  \begin{minipage}[t]{0.30\textwidth}
+      \vspace{4.50cm}
+AFNIC\\
+1 Rue George Stephenson,\\
+78180 Montigny-le-Bretonneux
+  \end{minipage}
+\end{flushright}
+\vspace{0.50cm}
+  {\centering\color{imtneAmbreText}\fontsize{40}{48}\selectfont\bfseries \hspace{0pt} Impact energétique du DNS \par}
+  \vspace{0.5cm}
+  {\centering\color{imtneAmbreText}\Large\bfseries  \hspace{0pt}Découverte de domaine (CI1) \par}
+\begin{figure}[!htbp]
+  \centering
+  \begin{minipage}[t]{0.90\textwidth}
+  \includegraphics[width=\textwidth]{paper/figures/GrafanaAPC.png}
+  \label{fig:pageDeGarde}
+  \end{minipage}
+\end{figure}
+
+  \vfill
+
+\begin{minipage}[t]{0.65\textwidth}
+\vspace{7pt}
+Tuteur entreprise : Benoit Ampeau, Directeur Partenariat et Inovation
+
+Référent stage IMT Nord Europe : Aucune Idée
+\end{minipage}
+\begin{minipage}[t]{0.30\textwidth}
+\begin{flushright}
+\textbf{Victor Berhault}\\
+FISE 2025\\
+2022/2023
+\end{flushright}
+\end{minipage}
+
+
+  \begin{tikzpicture}[overlay, remember picture]
+    \node[anchor=north west] at (current page.north west) {\includegraphics[height=5cm]{paper/figures/imtne.png}};
+    \node[anchor=north east] at (current page.north east) {\includegraphics[height=5.5cm]{paper/figures/logoOrga.jpg}};
+  \end{tikzpicture}
+  
+  \clearpage
+  \restoregeometry % Rétablir la géométrie par défaut
+\pagestyle{fancy}
+
+
