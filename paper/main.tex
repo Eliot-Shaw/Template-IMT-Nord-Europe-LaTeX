@@ -7,21 +7,43 @@
 \begin{document}
 % Page de garde
 \imtnepagedegarde
-    {Template IMT Nord Europe} % Titre
-    {Sous le langage LaTeX} % Sous-titre
-    {SHAW Eliot} % Auteur
+    {Cybersécurité et\\\hphantom f \qquad ~ Intégration continue} % Titre
+    {Rapport de stage} % Sous-titre
+    {SHAW Eliot\vspace{5px}Institut Mines Télécom Nord Europe\\Fise 2025} % Auteur
+
+\cleardoublepage
+% Remerciements
+\input{paper/content/remerciements}
+
+\clearpage
 
 % Table des matières
 \tableofcontents
+\clearpage
+
+% Mots Clés
+\input{paper/content/mots_cles}
 
 % Content
-\imtnechapitre{Les Animaux}
-\input{paper/content/lesAnimauxTerrestes}
-\input{paper/content/lesAnimauxMarins}
+\imtnechapitre{Introduction}
+\input{paper/content/introduction}
 
+\imtnechapitre{Contexte}
+\input{paper/content/introduction}
 
-\imtnechapitre{Deuxième Chapitre}
+\imtnechapitre{Travaux réalisés}
+\input{paper/content/trav-cyber}
+\input{paper/content/trav-ci}
 
+\imtnechapitre{Impressions personnelles}
+\input{paper/content/retour_perso}
 
+\imtnechapitre{Conclusion}
+\input{paper/content/conclusion}
+
+\cleardoublepage
+
+\imtnechapitre{Annexes et Bibliographie}
+\input{paper/content/annexes-biblio}
 
 \end{document}

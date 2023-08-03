@@ -3,8 +3,9 @@
   \newgeometry{top=25pt, bottom=30pt, inner=20pt, outer=30pt}
   \thispagestyle{empty} % Pas de header, footer ou numéro de page
 
-  \begin{minipage}[c]{0.2\textwidth}
+  \begin{minipage}[c]{0.4\textwidth}
     {\large \today\par % Date d'aujourd'hui en noir
+    \vspace{10px}
     \large {#3}\par} % Auteur(s) du document en noir
     \vspace{1cm}
   \end{minipage}
@@ -20,9 +21,9 @@
   \end{minipage}
   \vspace{25pt}
   \\
-  {\color{imtneAmbreText}\fontsize{40}{48}\selectfont\bfseries \hspace{0pt} #1 \par}
-  \vspace{0.5cm}
-  {\color{imtneAmbreText}\Large\bfseries #2}
+  {\color{imtneAmbreText}\fontsize{40}{40}\selectfont\bfseries \hspace{0pt} #1 \par}
+  \vspace{1cm}
+  {\color{imtneAmbreText}\huge\bfseries #2}
 
   \vspace*{\fill}
 
