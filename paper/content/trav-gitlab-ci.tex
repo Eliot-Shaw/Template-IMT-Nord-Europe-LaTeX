@@ -1,28 +1,70 @@
 \section{Intégration continue}
-MON REFACTO S4INSCRIT DANS UNE SERIE DE REFACTO DE IAGFIT 2.5
-git refacto ci des devs
 \subsection{Technologies utilisées}
-expliquer ce que c'est
-                    docker
-                    docker compose
-                    ci / cd
-                    jobs et yaml
+\subsubsection{Docker}
+Docker est une plate-forme de virtualisation légère qui permet de créer, gérer et exécuter des applications dans des conteneurs.
+Les conteneurs Docker encapsulent le code, les bibliothèques et les dépendances d'une application, garantissant une exécution cohérente et prévisible quel que soit l'environnement.
+Contrairement aux machines virtuelles traditionnelles, les conteneurs partagent le noyau du système hôte, ce qui les rend plus efficaces en termes de ressources.
+
+L'un des avantages clés de Docker est la portabilité.
+Grâce à Docker, vous pouvez empaqueter votre application et toutes ses dépendances dans un conteneur unique, puis le déplacer sans effort entre différents environnements, qu'il s'agisse d'un ordinateur portable de développement, d'un serveur de production ou d'un cloud public.
+
+Docker utilise des images pour définir le contenu et la configuration d'un conteneur.
+Les images Docker sont des modèles immuables qui contiennent tout ce dont un conteneur a besoin pour s'exécuter.
+Quand un fichier décrivant une image est modifié, seule la partie modifiée et ce qui suit est reconstruit, en réutilisant ce qui avait été précédemment construit.
+
+\subsubsection{Docker Compose}
+Docker Compose représente un outil simplifiant la gestion d'applications composées de plusieurs conteneurs.
+Plutôt que de nécessiter une gestion manuelle de chaque conteneur et de ses paramètres respectifs, Docker Compose offre la possibilité de définir l'ensemble de la configuration d'une application au sein d'un fichier \texttt{docker-compose.yml}.
+
+Dans ce fichier, les services sont spécifiés, lesquels constituent les divers composants de l'application, incluant leurs images Docker, les ports exposés, les variables d'environnement et d'autres options de configuration.
+Par la suite, en utilisant la commande \texttt{docker-compose up}, il est possible de lancer simultanément tous les conteneurs, instaurant un environnement cohérent pour l'application.
+
+De plus, Docker Compose simplifie la communication entre les conteneurs d'une application en mettant en place un réseau virtuel par défaut. Ceci permet aux services de se faire référence mutuellement par leur nom de service.
+
+\subsubsection{Intégration Continue (CI) avec GitLab}
+L'intégration continue (CI) est une pratique de développement logiciel visant à automatiser et à faciliter le processus de construction et de test d'une application.
+
+La construction et le test de Diagfit se fait sur la plate-forme de gestion de développement GitLab avec une série de tâches automatisées, appelées "jobs", qui sont exécutées séquentiellement en réponse aux changements du code source.
+
 
 \subsection{Besoin des developpeurs}
-expposer le pb : image docker sur laquelle il faut faire pas mal d boulot pour avoir un environnement
-                    environnement toujours différent entre test local t test devs
-                    long à écrire toutes les macros
+\subsubsection{architecture globale de Diagfit}
+Les développeurs travaillaient sur la dernière version en production : Diagfit 2.5.
+\todo{mettre drawio archi globale 2.5}
+Ci-dessus, l'architecture globale de l'application Diagfit avec tous leur services.
+Suite à une refactorisation de l'application, le système s'est grandement simplifié.
+\todo{mettre drawio archi globale 2.6}
+
+\subsubsection{Utilisation de Docker}
+L'image docker qui était utilisée pour Diagfit lors de la CI demandait une certaine quantité de commandes pour définir l'environnement de l'application.
+Reproduire le même environnement pour effectuer des tests était fastidieux et causait des différences entre l'environnement de test en local et celui produit lors de la CI par GitLab.
+
+\subsubsection{Mission confiée}
+La mission qui m'a été confiée fut :
+optimiser les dockerfiles et docker compose
+de créer une image Docker et un fichier Docker compose pour dev 
+avoir un env lançable identique entre local et ci
 
 \subsection{travail du refacto et rencontre des pb}
-variables gitlab
+\subsubsection{Optimisation du dockerfile ci}
 qu'estce que j'ai fait, comment optimoiser une image docker
+    organisation d'un dockerfile pour ne pas rebuild la base qui ne change pas
+    reduction des services nn utilisées
+
+\subsubsection{Création d'un dockerfile dev}
 travailler sur la création d'images en gitlab ci/cd test.gitlab-ci.yaml
-Robustesse du docker et de la CI !!!!
+    on a créé une image docker dev en utilisant une image docker :D
+    peut mtn lancer le build de l'image en local pour avoir le même env qui est utilisé par gitlab-ci
+
+\subsubsection{Modification de Gitlab}
+variables gitlab
+    des variables ont été set dans l'environnement GitLab en variables globales contenant des informations sensibles
+    -> on les a enlevées et on a pu utiliser des variables personnalisées pour le programme
 
 \subsection{rendu}
 refacto du dockerfile
 refacto du docker compose
 refacto du gitlab-ci
     une image à récupérer pour faire les tests, plus besoin de la faire en local
-    amélioration de la rapidité d'exectution de 9\% sur le job de test
+    amélioration de la rapidité d'exectution 12'15" to 11'15" sur le job de test
     Robustesse du docker et de la CI !!!!
