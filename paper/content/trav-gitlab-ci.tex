@@ -63,9 +63,10 @@ J'ai pu créer une image spécifique pour le rendu de l'application et une autre
 
 \subsubsection{Modification de Gitlab}
 Sur la CI de Gitlab, on inclut le fichier dockerfile mais pas l'image construite de l'application.
-Il nous a donc fallu 
+Il nous a donc fallu lancer une image docker générique pour build l'image docker de développement et de test d'une manière automatisée.
 
-on a créé une image docker dev en utilisant une image docker :D
+Une des difficultés rencontrées lors de la modification de l'envoironnement Gitlab fut lors de l'implémentation du nouveau job dans la Ci de gitlab : certaines variables fixées au sein du dockerfile ne prenaient pas effet dans le job 
+
 
 variables gitlab
 
