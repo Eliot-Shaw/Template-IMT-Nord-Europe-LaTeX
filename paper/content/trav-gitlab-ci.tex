@@ -41,30 +41,44 @@ Reproduire le même environnement pour effectuer des tests était fastidieux et 
 
 \subsubsection{Mission confiée}
 La mission qui m'a été confiée fut :
+
 optimiser les dockerfiles et docker compose
+
 de créer une image Docker et un fichier Docker compose pour dev 
+
 avoir un env lançable identique entre local et ci
 
 \subsection{travail du refacto et rencontre des pb}
 \subsubsection{Optimisation du dockerfile ci}
 qu'estce que j'ai fait, comment optimoiser une image docker
-    organisation d'un dockerfile pour ne pas rebuild la base qui ne change pas
-    reduction des services nn utilisées
+
+-    organisation d'un dockerfile pour ne pas rebuild la base qui ne change pas
+
+-    reduction des services nn utilisées
 
 \subsubsection{Création d'un dockerfile dev}
 travailler sur la création d'images en gitlab ci/cd test.gitlab-ci.yaml
-    on a créé une image docker dev en utilisant une image docker :D
-    peut mtn lancer le build de l'image en local pour avoir le même env qui est utilisé par gitlab-ci
+
+-    on a créé une image docker dev en utilisant une image docker :D
+
+- peut mtn lancer le build de l'image en local pour avoir le même env qui est utilisé par gitlab-ci
 
 \subsubsection{Modification de Gitlab}
 variables gitlab
-    des variables ont été set dans l'environnement GitLab en variables globales contenant des informations sensibles
-    -> on les a enlevées et on a pu utiliser des variables personnalisées pour le programme
+
+- des variables ont été set dans l'environnement GitLab en variables globales contenant des informations sensibles
+
+-> on les a enlevées et on a pu utiliser des variables personnalisées pour le programme
 
 \subsection{rendu}
 refacto du dockerfile
+
 refacto du docker compose
+
 refacto du gitlab-ci
-    une image à récupérer pour faire les tests, plus besoin de la faire en local
-    amélioration de la rapidité d'exectution 12'15" to 11'15" sur le job de test
-    Robustesse du docker et de la CI !!!!
+    
+- une image à récupérer pour faire les tests, plus besoin de la faire en local
+
+- amélioration de la rapidité d'exectution 12'15" to 11'15" sur le job de test
+
+- Robustesse du docker et de la CI !!!!
