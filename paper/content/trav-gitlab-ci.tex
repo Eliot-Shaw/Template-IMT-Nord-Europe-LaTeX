@@ -5,7 +5,7 @@ Docker est une plate-forme de virtualisation légère qui permet de créer, gér
 Les conteneurs Docker encapsulent le code, les bibliothèques et les dépendances d'une application, garantissant une exécution cohérente et prévisible quel que soit l'environnement.
 Contrairement aux machines virtuelles traditionnelles, les conteneurs partagent le noyau du système hôte, ce qui les rend plus efficaces en termes de ressources.
 
-L'un des avantages clés de Docker est la portabilité.
+L'un des avantages clés de Docker est la portabilité, un seul fichier descriptif appelé dockerfile est respondable pour la création du contenaire.
 Grâce à Docker, vous pouvez empaqueter votre application et toutes ses dépendances dans un conteneur unique, puis le déplacer sans effort entre différents environnements, qu'il s'agisse d'un ordinateur portable de développement, d'un serveur de production ou d'un cloud public.
 
 Docker utilise des images pour définir le contenu et la configuration d'un conteneur.
@@ -30,9 +30,12 @@ La construction et le test de Diagfit se fait sur la plate-forme de gestion de d
 \subsection{Besoin des developpeurs}
 \subsubsection{architecture globale de Diagfit}
 Les développeurs travaillaient sur la dernière version en production : Diagfit 2.5.
+
 \todo{mettre drawio archi globale 2.5}
+
 Ci-dessus, l'architecture globale de l'application Diagfit avec tous leur services.
 Suite à une refactorisation de l'application, le système s'est grandement simplifié.
+
 \todo{mettre drawio archi globale 2.6}
 
 \subsubsection{Utilisation de Docker}
@@ -40,30 +43,30 @@ L'image docker qui était utilisée pour Diagfit lors de la CI demandait une cer
 Reproduire le même environnement pour effectuer des tests était fastidieux et causait des différences entre l'environnement de test en local et celui produit lors de la CI par GitLab.
 
 \subsubsection{Mission confiée}
-La mission qui m'a été confiée fut :
+La mission qui m'a été confiée fut d'optimiser le dockerfile et le fichier Docker Compose utilisés pour le logiciel Diagfit.
 
-optimiser les dockerfiles et docker compose
-
-de créer une image Docker et un fichier Docker compose pour dev 
-
-avoir un env lançable identique entre local et ci
+J'ai aussi eu l'occasion de créer une image Docker et un fichier Docker Compose pour créer un environnement contrôlé utilisable pour la création du logiciel et également pour les tests des développeurs.
 
 \subsection{travail du refacto et rencontre des pb}
-\subsubsection{Optimisation du dockerfile ci}
-qu'estce que j'ai fait, comment optimoiser une image docker
+\subsubsection{Optimisation du dockerfile ci et docker compose}
+La construction d'une image Docker à partir d'un dockerfile se fait ligne par ligne - étape par étape.
+Lors de la reconstruction de l'image, Docker est capable de reprendre la construction au niveau de la première modification dans ce fichier.
 
--    organisation d'un dockerfile pour ne pas rebuild la base qui ne change pas
+L'initialisation de l'environnement de l'image Docker est le téléchargement des packages utilisés pour le logiciel étant long et peu changeant, il etait judicieux de les placer avant la récupération du code en développement.
 
--    reduction des services nn utilisées
+La réduction des services utilisés nous a également permis de les retirer u fichier docker compose et donc d'accélérer le temps de lancement de l'application.
 
-\subsubsection{Création d'un dockerfile dev}
-travailler sur la création d'images en gitlab ci/cd test.gitlab-ci.yaml
+\subsubsection{Création de différents dockerfiles en fonction des utilisations}
+La création d'un environnement identique entre la ci de Gitlab et l'ordinateur des développeurs backend était un point important dans la mission qui m'a été proposée.
 
--    on a créé une image docker dev en utilisant une image docker :D
-
-- peut mtn lancer le build de l'image en local pour avoir le même env qui est utilisé par gitlab-ci
+J'ai pu créer une image spécifique pour le rendu de l'application et une autre pour le développement et les tests unitaires à partir des fichiers existants.
 
 \subsubsection{Modification de Gitlab}
+Sur la CI de Gitlab, on inclut le fichier dockerfile mais pas l'image construite de l'application.
+Il nous a donc fallu 
+
+on a créé une image docker dev en utilisant une image docker :D
+
 variables gitlab
 
 - des variables ont été set dans l'environnement GitLab en variables globales contenant des informations sensibles
@@ -79,6 +82,6 @@ refacto du gitlab-ci
     
 - une image à récupérer pour faire les tests, plus besoin de la faire en local
 
-- amélioration de la rapidité d'exectution 12'15" to 11'15" sur le job de test
+- amélioration de la rapidité d'exectution 12'30" to 11'15" sur le job de test
 
 - Robustesse du docker et de la CI !!!!
