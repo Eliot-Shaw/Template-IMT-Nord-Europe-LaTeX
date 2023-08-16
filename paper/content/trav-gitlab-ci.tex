@@ -3,29 +3,30 @@
 \subsubsection{Intégration Continue (CI) avec GitLab}
 L'intégration continue (CI) est une pratique de développement logiciel visant à automatiser et à faciliter le processus de construction et de test d'une application.
 
-La construction et le test de Diagfit se fait sur la plate-forme de gestion de développement GitLab avec une série de tâches automatisées, appelées "jobs", qui sont exécutées séquentiellement en réponse aux changements du code source.
+Diagfit est construit et testé sur la plate-forme de gestion de développement GitLab à l'aide d'une série de tâches automatisées, appelées "jobs", qui sont exécutées séquentiellement en réponse aux changements du code source.
 
 \subsubsection{Docker}
-Docker est une plate-forme de contenairisation légère qui permet de créer, gérer et exécuter des applications dans des conteneurs.
+Docker est une plate-forme de conteneurisation légère qui permet de créer, gérer et exécuter des applications dans des conteneurs.
 Les conteneurs Docker encapsulent le code, les bibliothèques et les dépendances d'une application, garantissant une exécution cohérente et prévisible quel que soit l'environnement.
 Contrairement aux machines virtuelles traditionnelles, les conteneurs partagent le noyau du système hôte, ce qui les rend plus efficaces en termes de ressources.
 
-L'un des avantages clés de Docker est la portabilité, un seul fichier descriptif appelé dockerfile est respondable pour la création du contenaire.
-Grâce à Docker, vous pouvez empaqueter votre application et toutes ses dépendances dans un conteneur unique, puis le déplacer sans effort entre différents environnements, qu'il s'agisse d'un ordinateur portable de développement, d'un serveur de production ou d'un cloud public.
+L'un des avantages clés de Docker est sa portabilité.
+Un fichier descriptif unique, appelé "Dockerfile", est responsable de la création du conteneur.
+Grâce à Docker, vous pouvez empaqueter votre application ainsi que ses dépendances dans un conteneur unique, puis le déplacer sans effort entre différents environnements tels qu'un ordinateur portable de développement, un serveur de production ou un cloud public.
 
 Docker utilise des images pour définir le contenu et la configuration d'un conteneur.
 Les images Docker sont des modèles immuables qui contiennent tout ce dont un conteneur a besoin pour s'exécuter.
-Quand un fichier décrivant une image est modifié, seule la partie modifiée et ce qui suit est reconstruit, en réutilisant ce qui avait été précédemment construit.
+Lorsqu'un fichier décrivant une image est modifié, seule la partie modifiée et ce qui suit est reconstruit, en réutilisant ce qui avait été précédemment construit.
 
 \subsubsection{Docker Compose}
-Docker Compose représente un outil simplifiant la gestion d'applications composées de plusieurs conteneurs.
-Plutôt que de nécessiter une gestion manuelle de chaque conteneur et de ses paramètres respectifs, Docker Compose offre la possibilité de définir l'ensemble de la configuration d'une application au sein d'un fichier \texttt{docker-compose.yml}.
+Docker Compose est un outil simplifiant la gestion d'applications composées de plusieurs conteneurs.
+Plutôt que de nécessiter une gestion manuelle de chaque conteneur et de ses paramètres respectifs, Docker Compose offre la possibilité de définir l'ensemble de la configuration d'une application dans un fichier "docker-compose.yml".
 
 Dans ce fichier, les services sont spécifiés, lesquels constituent les divers composants de l'application, incluant leurs images Docker, les ports exposés, les variables d'environnement et d'autres options de configuration.
-Par la suite, en utilisant la commande \texttt{docker-compose up}, il est possible de lancer simultanément tous les conteneurs, instaurant un environnement cohérent pour l'application.
+En utilisant la commande docker-compose up, il est possible de lancer simultanément tous les conteneurs, instaurant un environnement cohérent pour l'application.
 
-De plus, Docker Compose simplifie la communication entre les conteneurs d'une application en mettant en place un réseau virtuel par défaut. Ceci permet aux services de se faire référence mutuellement par leur nom de service.
-
+De plus, Docker Compose simplifie la communication entre les conteneurs d'une application en mettant en place un réseau virtuel par défaut.
+Ceci permet aux services de se faire référence mutuellement par leur nom de service.
 
 \subsection{Environnement de développement}
 \subsubsection{Architecture globale de Diagfit}
@@ -39,8 +40,8 @@ Suite à une refactorisation de l'application, le système s'est grandement simp
 \todo{mettre drawio archi globale 2.6}
 
 \subsubsection{Utilisation de Docker et Docker compose}
-L'image docker qui était utilisée pour Diagfit lors de la CI demandait une certaine quantité de commandes pour définir l'environnement de l'application.
-Reproduire le même environnement pour effectuer des tests était fastidieux et causait des différences entre l'environnement de test en local et celui produit lors de la CI par GitLab.
+L'image Docker utilisée pour Diagfit lors de la CI présentait une complexité considérable dans la définition de l'environnement de l'application.
+Cependant, cette approche se révélait fastidieuse et entraînait des incohérences notables entre l'environnement de test local et celui généré durant la CI via GitLab.
 
 \subsubsection{Mission confiée}
 La mission qui m'a été confiée fut d'optimiser le dockerfile et le fichier Docker Compose utilisés pour le logiciel Diagfit.
@@ -49,36 +50,38 @@ J'ai aussi eu l'occasion de créer une image Docker et un fichier Docker Compose
 
 \subsection{Missions effectuées et problèmes rencontrés}
 \subsubsection{Optimisation du dockerfile ci et docker compose}
-La construction d'une image Docker à partir d'un dockerfile se fait ligne par ligne - étape par étape.
-Lors de la reconstruction de l'image, Docker est capable de reprendre la construction au niveau de la première modification dans ce fichier.
+L'assemblage d'une image Docker à partir d'un dockerfile se déroule en plusieurs étapes, ligne par ligne.
+Lors de la reconstruction de l'image, Docker est en mesure de reprendre le processus depuis la première modification dans le fichier.
 
-L'initialisation de l'environnement de l'image Docker est le téléchargement des packages utilisés pour le logiciel étant long et peu changeant, il etait judicieux de les placer avant la récupération du code en développement.
+Lors de cette mission, nous avons reconnu l'importance d'une initialisation efficace de l'environnement de l'image Docker.
+En effet, étant donné que le téléchargement des packages utilisés pour le logiciel était une étape longue et peu sujette au changement, il était judicieux de l'exécuter avant la récupération du code en développement.
 
-La réduction des services utilisés nous a également permis de les retirer u fichier docker compose et donc d'accélérer le temps de lancement de l'application.
+De plus, en réduisant le nombre de services utilisés, nous avons pu éliminer certains éléments du fichier docker-compose, contribuant ainsi à accélérer le temps de lancement de l'application.
 
 \subsubsection{Création de multiples Dockerfiles}
-La création d'un environnement identique entre la ci de Gitlab et l'ordinateur des développeurs backend était un point important dans la mission qui m'a été proposée.
+Dans le cadre de la mission qui m'a été confiée, l'une des priorités était d'assurer une homogénéité entre l'environnement de développement sur l'ordinateur des développeurs backend et celui utilisé sur la plateforme CI de GitLab.
+Pour répondre à ce besoin crucial, j'ai entrepris la création de plusieurs Dockerfiles distincts, chacun adapté à un aspect spécifique du processus de développement.
 
-J'ai pu créer une image spécifique pour le rendu de l'application et une autre pour le développement et les tests unitaires à partir des fichiers existants.
+L'un des résultats significatifs de cette initiative a été la mise en place de deux images Docker distinctes : l'une conçue spécifiquement pour le rendu de l'application, et l'autre optimisée pour les phases de développement et de tests unitaires.
 
-\subsubsection{Modification de l'environnement Gitlab}
-Sur la CI de Gitlab, on inclut le fichier dockerfile mais pas l'image construite de l'application.
-Il nous a donc fallu lancer une image docker générique pour build l'image docker de développement et de test d'une manière automatisée.
+L'intégration de Docker dans notre flux de travail au sein de GitLab a apporté des améliorations significatives, mais elle a également nécessité des ajustements dans l'environnement de travail de la plateforme.
+Lors de la transition vers une approche basée sur Docker, nous avons rencontré un défi majeur : comment gérer le processus de construction d'images de manière automatisée tout en assurant la flexibilité nécessaire pour le développement et les tests.
 
-Une des difficultés rencontrées lors de la modification de l'envoironnement Gitlab fut lors de l'implémentation du nouveau job dans la Ci de gitlab : certaines variables fixées au sein du dockerfile ne prenaient pas effet dans le job 
+Pour résoudre ce défi, nous avons mis en place un mécanisme ingénieux : nous avons introduit une image Docker générique, spécialement conçue pour la construction d'images.
+Cette approche nous a permis d'automatiser la génération des images et de maintenir un niveau élevé de cohérence entre les différentes étapes du processus.
 
-
-variables gitlab
-
-- des variables ont été set dans l'environnement GitLab en variables globales contenant des informations sensibles
-
--> on les a enlevées et on a pu utiliser des variables personnalisées pour le programme
+Cependant, tout ne s'est pas déroulé sans accroc.
+Lors de l'implémentation de cette nouvelle approche au sein de la CI GitLab, nous avons constaté que certaines variables définies dans le dockerfile ne s'appliquaient pas correctement aux jobs en cours d'exécution.
+Après une analyse minutieuse, nous avons identifié que certaines variables étaient déjà définies au niveau de l'environnement GitLab en tant que variables globales, ce qui entraînait des conflits.
+Nous avons rapidement résolu ce problème en utilisant des variables personnalisées spécifiques au programme, ce qui a permis de garantir la cohérence des configurations et d'éviter les problèmes de sécurité : la variable fixée globalement était une donnée sensible.
 
 \subsubsection{Impacts bénéfiques}
-refacto du gitlab-ci
-    
-- une image à récupérer pour faire les tests, plus besoin de la faire en local
-
-- amélioration de la rapidité d'exectution 12'30" to 11'15" sur le job de test
-
-- Robustesse du docker et de la CI !!!!
+Les changements apportés à l'environnement de développement ont eu des répercussions positives, notamment :
+\begin{itemize}
+    \item Réduction significative du temps d'exécution des tests : Le temps d'exécution du job de test a été réduit de 12 minutes 30 secondes à seulement 11 minutes 15 secondes.
+    Cette amélioration a permis aux développeurs de gagner un temps précieux lors de l'exécution des tests, ce qui a contribué à augmenter leur productivité.
+    \item Amélioration de la cohérence et de la robustesse de l'infrastructure : L'utilisation de Docker et la restructuration de la GitLab CI ont renforcé la cohérence et la robustesse de notre infrastructure de développement.
+    La séparation des images et des environnements spécifiques a considérablement réduit les risques d'incohérence entre les différentes étapes du processus.
+    \item Gains de temps pour les développeurs : En éliminant la nécessité de recréer continuellement l'environnement de test, les développeurs ont pu économiser un temps précieux.
+    Cela leur a permis de se concentrer davantage sur le développement et les tests de l'application, au lieu de perdre du temps à configurer manuellement les environnements.
+\end{itemize}
