@@ -13,10 +13,10 @@ Suite à une modificationdes paramètres du serveur responsable pour l'hébergem
 La mission qui m'a été confiée fut de créer sur une machine virtuelle un serveur permettant d'héberger le site sur un domaine de développement pour pouvoir contrôler l'environnement utilisé.
 
 \todo{?mettre nous}
-Suite à des recherches sur internet, j'ai choisi de mettre en place un environnement composé des technologies suivantes : Linux, Nginx [prononcé engine-x], MariaBD et PHP ou LEMP en plus court.
-
+Suite à des recherches sur internet, j'ai choisi de mettre en place un environnement composé des technologies suivantes : Linux, Nginx [prononcé engine-x], MariaBD et PHP ou LEMP.
 
 \todo{J4AI FAIT DES REQUETES SQL}
+\todo{supprimmé le site internet : objectif dépassé}
 
 \subsubsection{inventaire}
 des pc ecrans et docks
@@ -37,27 +37,34 @@ suivre des conference de la dga
 
 création d'une présentation hebdomadaire sur le dernier mois sur les bonnes pratiques de sécu
 
-\subsubsection{sophos ztna}
-ajout d'une ressource 
+\subsubsection{Sophos Zero Trust Network Access (ZTNA)}
 
-prez outil employés
+Dans la continuité de notre engagement envers une sécurité informatique robuste, nous avons intégré la solution Sophos Zero Trust Network Access (ZTNA).
+Cette approche moderne de la sécurité réseau répond à nos besoins croissants en matière de protection des données et des systèmes, tout en favorisant la prévention proactive des menaces.
+De plus, l'agent Sophos ZTNA comporte également un antivirus qui permet de surveiller la santé des ordinateurs et de fournir des informations essentielles à notre stratégie de sécurité.
 
-prez interface sysadmin pour intégration continue   
+\begin{itemize}
+    \item \textbf{Gestion des Ressources Sécurisées :} Grâce à Sophos ZTNA, nous avons renforcé la sécurité de notre infrastructure en gérant de manière plus rigoureuse l'accès aux ressources internes.
+    Cette fonctionnalité nous permet de limiter les accès non autorisés en fonction des utilisateurs, des appareils et des emplacements.
+    \item \textbf{Sensibilisation des Utilisateurs :} Une présentation détaillée de ZTNA a été dispensée à nos employés pour les familiariser avec cet outil de sécurité.
+    Cette initiative vise à promouvoir une utilisation responsable et sécurisée de la solution, renforçant ainsi la vigilance de nos équipes.
+    \item \textbf{Intégration dans les Flux de Travail :} L'interface d'administration de ZTNA a été intégrée à nos processus de développement et d'intégration continue.
+    Cela garantit que chaque nouveau système ou application est configuré en respectant nos normes de sécurité avant son déploiement.
+    \item \textbf{Engagement envers la Confiance Zéro :} L'adoption de Sophos ZTNA témoigne de notre adhésion à une approche de sécurité axée sur la confiance zéro.
+    Nous repensons la notion traditionnelle de confiance en privilégiant des contrôles d'accès détaillés basés sur l'identité et d'autres facteurs de risque.
+\end{itemize}
 
-\subsubsection{wazuh}
-serveur de monitoring
+\subsubsection{Sécurité Renforcée par Wazuh}
 
-ajout d'une manière automatisée des agents sur les pc des employés à travers l'interface Intune
+Nous avons déployé Wazuh, une solution de surveillance de sécurité, pour renforcer la protection de notre infrastructure informatique.
+En utilisant un serveur Wazuh Manager et un Wazuh Indexer dans une machine virtuelle, nous centralisons la surveillance et l'indexation des journaux système.
 
-\subsubsection{docusaurus}
-creation d'une documentation en ligne pour regrouper toutes les procédures
+Nous avons lié ce service à un sous-domaine de notre entreprise pour une identification précise des menaces.
+De plus, en automatisant l'installation des agents Wazuh sur les ordinateurs des employés via Intune, nous assurons une surveillance cohérente et fiable.
 
-sur pc justine lol paske on m'a jamais donné de vm
+Notre déploiement de Wazuh renforce la sécurité de notre infrastructure en simplifiant la surveillance et en automatisant le déploiement des agents.
+Ainsi, Wazuh nous permet de réagir de manière proactive pour assurer la protection continue de notre entreprise.
 
-création de multiples procédures employés
-
-création de multiples procédures sysadmin
-\newpage
 \subsubsection{Docusaurus : Centralisation des Procédures}
 Dans le but de simplifier l'accès aux procédures clés, nous avons créé une documentation en ligne en utilisant Docusaurus.
 Cette plateforme nous permet de regrouper et de présenter de manière conviviale diverses procédures pour optimiser notre efficacité et garantir une expérience homogène.
@@ -104,7 +111,7 @@ gophish:
 - lancement potentiels d'une campagne ?
 
 \subsubsection{Assistance technique}
-SAV et voider les pc
+SAV et void les pc
 
 \subsubsection{Importance de la communication}
 pk on a des pb into retirer cybersécu : communication aux choux
