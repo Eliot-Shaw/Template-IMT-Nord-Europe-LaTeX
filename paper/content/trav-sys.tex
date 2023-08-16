@@ -1,4 +1,4 @@
-\section{Administration Système}
+\section{Administration système}
 Le pôle administration système joue un rôle essentiel dans le maintien en condition opérationnelle des systèmes informatiques de l'entreprise.
 Il est responsable de la gestion des sauvegardes et de la récupération des données, assurant ainsi la disponibilité et l'intégrité des informations cruciales.
 De plus, il effectue également l'inventaire des équipements et des logiciels, ce qui permet de maintenir une visibilité précise sur les ressources technologiques de l'entreprise.
@@ -7,27 +7,59 @@ Grâce à ces responsabilités, le pôle administration système contribue à as
 Le pôle d'administrateurs système est composé d'une seule personne, Delgutte Théo.
 J'ai eu l'occasion de l'assister dans sa mission continue de maintien en condition opérationnelle de la partie informatique de l'entreprise.
 
-\subsection{Infrastructure}
-\subsubsection{serveur web pour tester la version php du wordpress et migratiions url grace au sql}
-Suite à une modificationdes paramètres du serveur responsable pour l'hébergement du site vitrine d'amiral Technologies, la capacité des collaborateurs à l'éditer fut altérée.
-La mission qui m'a été confiée fut de créer sur une machine virtuelle un serveur permettant d'héberger le site sur un domaine de développement pour pouvoir contrôler l'environnement utilisé.
+\subsection{Objectifs initiaux}
+\subsubsection{Réduction des risques}
 
-\todo{?mettre nous}
-Suite à des recherches sur internet, j'ai choisi de mettre en place un environnement composé des technologies suivantes : Linux, Nginx [prononcé engine-x], MariaBD et PHP ou LEMP.
+\subsubsection{Attraction des clients}
 
-\todo{J4AI FAIT DES REQUETES SQL}
-\todo{supprimmé le site internet : objectif dépassé}
 
-\subsubsection{inventaire}
-des pc ecrans et docks
+\subsection{Missions effectuées}
+\subsubsection{Gestion de l'infrastructure et de l'inventaire}
+Dans le cadre de la gestion de l'infrastructure informatique au sein d'Amiral Technologies, j'ai entrepris des actions visant à améliorer la fonctionnalité, la stabilité et la gestion des différents composants de notre environnement.
 
-des droits et applications
+\textbf{Serveur Web et Migration d'URL}
 
-imagination d'un squelette pour une base de données d'inventaire - projet tombé à l'eau
+Une modification des paramètres du serveur hébergeant le site vitrine de l'entreprise a restreint la capacité des collaborateurs à effectuer des modifications.
+Ma mission consistait alors à résoudre ce problème en mettant en place un serveur de développement dédié.
+Cela permettrait de tester les changements sur un domaine de test avant de les appliquer au site en production.
+Pour cela, j'ai choisi une configuration LEMP (Linux, Nginx, MariaDB, PHP).
+J'ai également assuré la migration des URL en rédigeant des requêtes SQL pour adapter la base de données du site.
 
-adresses ip et schema réseau
+\textbf{Gestion de l'Inventaire Matériel et Utilisateurs}
 
-\subsection{Cybersécurité}
+Pour une meilleure gestion des ressources matérielles et des droits d'accès des utilisateurs, j'ai supervisé l'inventaire des ordinateurs, écrans et docks de l'entreprise.
+J'ai également veillé à ce que les droits d'accès des utilisateurs aux applications soient en accord avec les politiques de sécurité en place.
+
+\textbf{Conception d'une Base de Données d'Inventaire}
+
+Pour centraliser l'ensemble des informations liées à l'inventaire, j'ai proposé la conception d'une base de données spécifique.
+Cette structure aurait permis de suivre de manière systématique et précise les éléments matériels et les attributions aux utilisateurs.
+
+\textbf{Optimisation du Schéma Réseau}
+
+Afin d'améliorer la performance et l'efficacité de notre réseau, j'ai travaillé sur l'optimisation de son schéma.
+Cela a inclus l'identification et la documentation minutieuse des adresses IP associées à chaque machine et service au sein de l'entreprise.
+
+\subsubsection{Cyber}
+L'approche de notre entreprise repose sur trois piliers essentiels : la recherche d'informations liées à la norme ISO27001, l'intégration de Sophos Zero Trust Network Access (ZTNA) et le déploiement de Wazuh pour la surveillance de sécurité.
+
+En matière de sécurité, notre engagement envers la norme ISO27001 se traduit par la récupération et la synthétisation des documents clés.
+De plus, j'ai eu l'opportunité de participer aux conférences de la Direction du Renseignement et de la Sécurité de la Défense, où j'ai pu échanger sur la situation de notre entreprise et la mise en place d'une nouvelle norme française de sécurité.
+
+L'intégration de Sophos ZTNA reflète notre recherche constante de solutions avancées pour sécuriser nos systèmes et nos données.
+L'agent Sophos ZTNA ne se contente pas de fournir une défense proactive, il intègre également un antivirus pour surveiller la santé de nos ordinateurs.
+Les avantages englobent une gestion minutieuse des ressources, la sensibilisation des utilisateurs, une intégration harmonieuse dans nos flux de travail et une adhésion à une approche de confiance zéro.
+
+En parallèle, notre engagement en matière de sécurité se matérialise par le déploiement de Wazuh, une solution de surveillance qui renforce la protection de notre infrastructure.
+En centralisant la surveillance et l'indexation des journaux système au moyen d'un serveur Wazuh Manager et Wazuh Indexer, nous assurons une détection proactive des menaces.
+En automatisant l'installation des agents Wazuh sur les ordinateurs via Intune, nous établissons une surveillance constante et fiable, nous permettant de réagir rapidement et efficacement.
+
+Enfin, notre documentation prend une nouvelle forme grâce à Docusaurus, une plateforme qui centralise nos procédures pour une accessibilité et une efficacité accrues.
+En hébergeant la documentation sur un PC dédié exécutant Ubuntu, nous garantissons un accès limité aux collaborateurs via une adresse IP locale.
+En segmentant les procédures pour les employés et les administrateurs système, nous simplifions leur utilisation et contribuons à l'efficacité globale de notre équipe.
+Cela renforce notre capacité à partager nos connaissances et à faciliter l'intégration fluide des nouveaux membres.
+
+
 \subsubsection{iso27001}
 pourquoi : clients et cybersécu
 
@@ -80,10 +112,42 @@ Nous avons segmenté les procédures en deux volets :
     De plus, elle propose des protocoles pour la création et la suppression de comptes d'employés, ainsi que des directives à suivre en cas d'attaque cyber.
 \end{itemize}
 
-En adoptant Docusaurus pour notre documentation, nous renforçons notre capacité à partager et à transmettre les connaissances internes de manière efficace, tout en améliorant la collaboration et la réactivité de notre équipe.
-Cela garantit que chaque nouveau membre, qu'il soit employé ou administrateur système, dispose des ressources nécessaires pour contribuer à l'entreprise. 
-\todo{[FAUX], à remplacer par une phrase plus vraie genre de disposer des ressources de base pour comprendre la contexte de base de l'utilisation et des règles de l'entreprise}
+En choisissant d'utiliser Docusaurus pour notre documentation, nous renforçons notre capacité à partager et à transmettre efficacement les connaissances internes au sein de notre équipe.
+Cela assure que chaque nouveau membre, qu'il soit employé ou administrateur système, dispose des ressources de base nécessaires pour comprendre le contexte d'utilisation et les règles de l'entreprise.
 
+
+\subsection{Retour et critiques sur le projet}
+\subsubsection{Pas ou peu de réduction des risques et création de nouveaux risques}
+
+\subsubsection{Perte de l'autonomie}
+
+
+\subsection{Modification des objectifs}
+\subsubsection{Eductation cyber}
+prez hebdo
+
+gophish:
+
+- scrapping de sites officiels
+
+- scrapping d'emails officiels
+
+- lancement potentiels d'une campagne ?
+
+
+\subsubsection{Mise en place d'une infrastructure alternative}
+infra changeante --- retiré le wazuh et sophos ztna
+
+\subsubsection{Modification des droits et autorisations}
+gestionnaire de mdp de sysadmin
+
+
+\subsection{Enseignements tirés}
+\subsubsection{Importance de faire des choix éclairés}
+
+\subsubsection{Importance de la communication}
+pk on a des pb into retirer cybersécu : communication aux choux
+phrase d'intro : on ne s'imaginerait pas que faire du sysadmin implique autant le contact humain 
 
 \subsubsection{L'isopérimètrie dans le monde de l'entreprise}
 Dans le contexte professionnel actuel, équilibrer l'efficacité au travail et la cybersécurité est crucial.
@@ -97,28 +161,4 @@ Le défi réside dans la recherche du bon équilibre entre des mesures de sécur
 Cela exige des solutions astucieuses de la part des administrateurs système.
 L'objectif ultime étant de créer un environnement où la sécurité est maximisée tout préservant la capacité à livrer de la valeur.
 
-\subsection{Contact avec les collaborateurs}
-phrase d'intro : on ne s'imaginerait pas que faire du sysadmin implique autant le contact humain 
-\subsubsection{Sensibilisation}
-prez hebdo
-
-gophish:
-
-- scrapping de sites officiels
-
-- scrapping d'emails officiels
-
-- lancement potentiels d'une campagne ?
-
-\subsubsection{Assistance technique}
-SAV et void les pc
-
-\subsubsection{Importance de la communication}
-pk on a des pb into retirer cybersécu : communication aux choux
-
-\subsubsection{changement de sysadmin}
-infra changeante
-
-gestionnaire de mdp de sysadmin
-
-retiré le wazuh et sophos ztna
+\subsubsection{Identification des riques}

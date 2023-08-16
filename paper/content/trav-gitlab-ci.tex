@@ -1,5 +1,10 @@
 \section{Intégration continue}
 \subsection{Technologies utilisées}
+\subsubsection{Intégration Continue (CI) avec GitLab}
+L'intégration continue (CI) est une pratique de développement logiciel visant à automatiser et à faciliter le processus de construction et de test d'une application.
+
+La construction et le test de Diagfit se fait sur la plate-forme de gestion de développement GitLab avec une série de tâches automatisées, appelées "jobs", qui sont exécutées séquentiellement en réponse aux changements du code source.
+
 \subsubsection{Docker}
 Docker est une plate-forme de contenairisation légère qui permet de créer, gérer et exécuter des applications dans des conteneurs.
 Les conteneurs Docker encapsulent le code, les bibliothèques et les dépendances d'une application, garantissant une exécution cohérente et prévisible quel que soit l'environnement.
@@ -21,14 +26,9 @@ Par la suite, en utilisant la commande \texttt{docker-compose up}, il est possib
 
 De plus, Docker Compose simplifie la communication entre les conteneurs d'une application en mettant en place un réseau virtuel par défaut. Ceci permet aux services de se faire référence mutuellement par leur nom de service.
 
-\subsubsection{Intégration Continue (CI) avec GitLab}
-L'intégration continue (CI) est une pratique de développement logiciel visant à automatiser et à faciliter le processus de construction et de test d'une application.
 
-La construction et le test de Diagfit se fait sur la plate-forme de gestion de développement GitLab avec une série de tâches automatisées, appelées "jobs", qui sont exécutées séquentiellement en réponse aux changements du code source.
-
-
-\subsection{Besoin des developpeurs}
-\subsubsection{architecture globale de Diagfit}
+\subsection{Environnement de développement}
+\subsubsection{Architecture globale de Diagfit}
 Les développeurs travaillaient sur la dernière version en production : Diagfit 2.5.
 
 \todo{mettre drawio archi globale 2.5}
@@ -38,7 +38,7 @@ Suite à une refactorisation de l'application, le système s'est grandement simp
 
 \todo{mettre drawio archi globale 2.6}
 
-\subsubsection{Utilisation de Docker}
+\subsubsection{Utilisation de Docker et Docker compose}
 L'image docker qui était utilisée pour Diagfit lors de la CI demandait une certaine quantité de commandes pour définir l'environnement de l'application.
 Reproduire le même environnement pour effectuer des tests était fastidieux et causait des différences entre l'environnement de test en local et celui produit lors de la CI par GitLab.
 
@@ -47,7 +47,7 @@ La mission qui m'a été confiée fut d'optimiser le dockerfile et le fichier Do
 
 J'ai aussi eu l'occasion de créer une image Docker et un fichier Docker Compose pour créer un environnement contrôlé utilisable pour la création du logiciel et également pour les tests des développeurs.
 
-\subsection{travail du refacto et rencontre des pb}
+\subsection{Missions effectuées et problèmes rencontrés}
 \subsubsection{Optimisation du dockerfile ci et docker compose}
 La construction d'une image Docker à partir d'un dockerfile se fait ligne par ligne - étape par étape.
 Lors de la reconstruction de l'image, Docker est capable de reprendre la construction au niveau de la première modification dans ce fichier.
@@ -56,12 +56,12 @@ L'initialisation de l'environnement de l'image Docker est le téléchargement de
 
 La réduction des services utilisés nous a également permis de les retirer u fichier docker compose et donc d'accélérer le temps de lancement de l'application.
 
-\subsubsection{Création de différents dockerfiles en fonction des utilisations}
+\subsubsection{Création de multiples Dockerfiles}
 La création d'un environnement identique entre la ci de Gitlab et l'ordinateur des développeurs backend était un point important dans la mission qui m'a été proposée.
 
 J'ai pu créer une image spécifique pour le rendu de l'application et une autre pour le développement et les tests unitaires à partir des fichiers existants.
 
-\subsubsection{Modification de Gitlab}
+\subsubsection{Modification de l'environnement Gitlab}
 Sur la CI de Gitlab, on inclut le fichier dockerfile mais pas l'image construite de l'application.
 Il nous a donc fallu lancer une image docker générique pour build l'image docker de développement et de test d'une manière automatisée.
 
@@ -74,11 +74,7 @@ variables gitlab
 
 -> on les a enlevées et on a pu utiliser des variables personnalisées pour le programme
 
-\subsection{rendu}
-refacto du dockerfile
-
-refacto du docker compose
-
+\subsubsection{Impacts bénéfiques}
 refacto du gitlab-ci
     
 - une image à récupérer pour faire les tests, plus besoin de la faire en local
