@@ -9,145 +9,129 @@ J'ai eu l'occasion de l'assister dans sa mission continue de maintien en conditi
 
 \subsection{Objectifs initiaux}
 \subsubsection{Réduction des risques}
+L'objectif de mon stage était d'atténuer les divers risques potentiels liés à la cyberattaque et à la perte de données.
+
+Ci-dessous une liste des risques identifiés en amont de mon stage :
+\begin{itemize}
+    \item \textbf{Vulnérabilités Systèmes}
+    \item \textbf{Attaques par Hameçonnage}
+    \item \textbf{Perte de Données}
+    \item \textbf{Accès Non Autorisés}
+    \item \textbf{Malwares et Logiciels Malveillants}
+    \item \textbf{Défaillance Matérielle}
+    \item \textbf{Fuites d'Informations}
+\end{itemize}
 
 \subsubsection{Attraction des clients}
-
+De plus, certains clients travaillant avec des données sensibles et des secrets industriels ont manifesté leur intérêt pour l'utilisation du logiciel DiagFit.
+Toutefois, ils ont émis une condition spécifique : l'obtention de la certification ISO 27001.
+Cette exigence aurait pu constituer un élément différenciateur et potentiellement plus vendeur pour le logiciel, renforçant ainsi son attrait auprès de clients soucieux de la sécurité de leurs données.
 
 \subsection{Missions effectuées}
+Dans le cadre de mon rôle au sein d'Amiral Technologies, j'ai entrepris diverses missions visant à améliorer la fonctionnalité, la stabilité et la gestion globale de notre environnement informatique.
+
 \subsubsection{Gestion de l'infrastructure et de l'inventaire}
-Dans le cadre de la gestion de l'infrastructure informatique au sein d'Amiral Technologies, j'ai entrepris des actions visant à améliorer la fonctionnalité, la stabilité et la gestion des différents composants de notre environnement.
+J'ai contribué à l'amélioration de notre infrastructure informatique en mettant en place des actions ciblées pour optimiser son fonctionnement.
+Cela incluait notamment la résolution d'un problème lié à notre serveur web qui restreignait les modifications par les collaborateurs.
+Pour résoudre ce problème, j'ai configuré un serveur de développement dédié, permettant de tester les changements avant leur application sur le site en production.
+J'ai également migré les URL en adaptant la base de données du site via des requêtes SQL.
 
-\textbf{Serveur Web et Migration d'URL}
+En parallèle, j'ai supervisé l'inventaire matériel et utilisateurs pour une meilleure gestion des ressources et des droits d'accès.
+J'ai veillé à ce que les droits d'accès des utilisateurs soient en conformité avec les politiques de sécurité et proposé la conception d'une base de données d'inventaire pour centraliser et suivre les attributions aux utilisateurs.
 
-Une modification des paramètres du serveur hébergeant le site vitrine de l'entreprise a restreint la capacité des collaborateurs à effectuer des modifications.
-Ma mission consistait alors à résoudre ce problème en mettant en place un serveur de développement dédié.
-Cela permettrait de tester les changements sur un domaine de test avant de les appliquer au site en production.
-Pour cela, j'ai choisi une configuration LEMP (Linux, Nginx, MariaDB, PHP).
-J'ai également assuré la migration des URL en rédigeant des requêtes SQL pour adapter la base de données du site.
+Enfin, j'ai travaillé sur l'optimisation du schéma réseau en identifiant et en documentant minutieusement les adresses IP associées à chaque machine et service de l'entreprise.
 
-\textbf{Gestion de l'Inventaire Matériel et Utilisateurs}
+\subsubsection{Approche de la Cybersécurité au Quotidien}
+La sécurité informatique étant une priorité chez Amiral Technologies, j'ai contribué à mettre en place une approche pratique pour garantir la protection de nos systèmes et données.
+Pour cela, nous avons initié plusieurs axes d'action.
 
-Pour une meilleure gestion des ressources matérielles et des droits d'accès des utilisateurs, j'ai supervisé l'inventaire des ordinateurs, écrans et docks de l'entreprise.
-J'ai également veillé à ce que les droits d'accès des utilisateurs aux applications soient en accord avec les politiques de sécurité en place.
+En premier lieu, j'ai participé à la collecte et à la synthèse de documents clés en lien avec la norme ISO27001, ce qui nous a permis d'acquérir une solide compréhension des meilleures pratiques en matière de sécurité.
 
-\textbf{Conception d'une Base de Données d'Inventaire}
+J'ai également eu l'opportunité de participer à une conférence de la Direction du Renseignement et de la Sécurité de la Défense (DRSD), qui m'a apporté des perspectives concrètes sur les enjeux de cybersécurité et d'espionnage industriel international.
 
-Pour centraliser l'ensemble des informations liées à l'inventaire, j'ai proposé la conception d'une base de données spécifique.
-Cette structure aurait permis de suivre de manière systématique et précise les éléments matériels et les attributions aux utilisateurs.
+Un aspect clé de notre approche a été l'intégration de l'outil Sophos Zero Trust Network Access (ZTNA), qui répond à nos besoins croissants de protection des données et systèmes.
+J'ai ensuite organisé une présentation approfondie de l'outil Sophos ZTNA pour assurer sa compréhension et son utilisation par tous les collaborateurs.
 
-\textbf{Optimisation du Schéma Réseau}
+Parallèlement, nous avons renforcé notre surveillance en mettant en place Wazuh.
+Cette solution nous a permis d'améliorer la détection des menaces en centralisant la surveillance via un serveur Wazuh Manager et un Wazuh Indexer.
+L'installation automatisée des agents Wazuh sur les ordinateurs a assuré une surveillance constante et réactive.
 
-Afin d'améliorer la performance et l'efficacité de notre réseau, j'ai travaillé sur l'optimisation de son schéma.
-Cela a inclus l'identification et la documentation minutieuse des adresses IP associées à chaque machine et service au sein de l'entreprise.
+Enfin, pour faciliter la gestion et le partage de connaissances, nous avons créé une documentation interne à l'aide de Docusaurus.
+Cette plateforme, hébergée sur un PC réhabilité sous Ubuntu, a été organisée en deux parties : une pour les employés et une pour les administrateurs système, couvrant divers scénarios et procédures liées à notre environnement informatique.
 
-\subsubsection{Cyber}
-L'approche de notre entreprise repose sur trois piliers essentiels : la recherche d'informations liées à la norme ISO27001, l'intégration de Sophos Zero Trust Network Access (ZTNA) et le déploiement de Wazuh pour la surveillance de sécurité.
-
-En matière de sécurité, notre engagement envers la norme ISO27001 se traduit par la récupération et la synthétisation des documents clés.
-De plus, j'ai eu l'opportunité de participer aux conférences de la Direction du Renseignement et de la Sécurité de la Défense, où j'ai pu échanger sur la situation de notre entreprise et la mise en place d'une nouvelle norme française de sécurité.
-
-L'intégration de Sophos ZTNA reflète notre recherche constante de solutions avancées pour sécuriser nos systèmes et nos données.
-L'agent Sophos ZTNA ne se contente pas de fournir une défense proactive, il intègre également un antivirus pour surveiller la santé de nos ordinateurs.
-Les avantages englobent une gestion minutieuse des ressources, la sensibilisation des utilisateurs, une intégration harmonieuse dans nos flux de travail et une adhésion à une approche de confiance zéro.
-
-En parallèle, notre engagement en matière de sécurité se matérialise par le déploiement de Wazuh, une solution de surveillance qui renforce la protection de notre infrastructure.
-En centralisant la surveillance et l'indexation des journaux système au moyen d'un serveur Wazuh Manager et Wazuh Indexer, nous assurons une détection proactive des menaces.
-En automatisant l'installation des agents Wazuh sur les ordinateurs via Intune, nous établissons une surveillance constante et fiable, nous permettant de réagir rapidement et efficacement.
-
-Enfin, notre documentation prend une nouvelle forme grâce à Docusaurus, une plateforme qui centralise nos procédures pour une accessibilité et une efficacité accrues.
-En hébergeant la documentation sur un PC dédié exécutant Ubuntu, nous garantissons un accès limité aux collaborateurs via une adresse IP locale.
-En segmentant les procédures pour les employés et les administrateurs système, nous simplifions leur utilisation et contribuons à l'efficacité globale de notre équipe.
-Cela renforce notre capacité à partager nos connaissances et à faciliter l'intégration fluide des nouveaux membres.
-
-
-\subsubsection{iso27001}
-pourquoi : clients et cybersécu
-
-récupération des documents de nécéssité pour l'ISO27001 : synthétisation
-
-suivre des conference de la dga
-
-création d'une présentation hebdomadaire sur le dernier mois sur les bonnes pratiques de sécu
-
-\subsubsection{Sophos Zero Trust Network Access (ZTNA)}
-
-Dans la continuité de notre engagement envers une sécurité informatique robuste, nous avons intégré la solution Sophos Zero Trust Network Access (ZTNA).
-Cette approche moderne de la sécurité réseau répond à nos besoins croissants en matière de protection des données et des systèmes, tout en favorisant la prévention proactive des menaces.
-De plus, l'agent Sophos ZTNA comporte également un antivirus qui permet de surveiller la santé des ordinateurs et de fournir des informations essentielles à notre stratégie de sécurité.
-
-\begin{itemize}
-    \item \textbf{Gestion des Ressources Sécurisées :} Grâce à Sophos ZTNA, nous avons renforcé la sécurité de notre infrastructure en gérant de manière plus rigoureuse l'accès aux ressources internes.
-    Cette fonctionnalité nous permet de limiter les accès non autorisés en fonction des utilisateurs, des appareils et des emplacements.
-    \item \textbf{Sensibilisation des Utilisateurs :} Une présentation détaillée de ZTNA a été dispensée à nos employés pour les familiariser avec cet outil de sécurité.
-    Cette initiative vise à promouvoir une utilisation responsable et sécurisée de la solution, renforçant ainsi la vigilance de nos équipes.
-    \item \textbf{Intégration dans les Flux de Travail :} L'interface d'administration de ZTNA a été intégrée à nos processus de développement et d'intégration continue.
-    Cela garantit que chaque nouveau système ou application est configuré en respectant nos normes de sécurité avant son déploiement.
-    \item \textbf{Engagement envers la Confiance Zéro :} L'adoption de Sophos ZTNA témoigne de notre adhésion à une approche de sécurité axée sur la confiance zéro.
-    Nous repensons la notion traditionnelle de confiance en privilégiant des contrôles d'accès détaillés basés sur l'identité et d'autres facteurs de risque.
-\end{itemize}
-
-\subsubsection{Sécurité Renforcée par Wazuh}
-
-Nous avons déployé Wazuh, une solution de surveillance de sécurité, pour renforcer la protection de notre infrastructure informatique.
-En utilisant un serveur Wazuh Manager et un Wazuh Indexer dans une machine virtuelle, nous centralisons la surveillance et l'indexation des journaux système.
-
-Nous avons lié ce service à un sous-domaine de notre entreprise pour une identification précise des menaces.
-De plus, en automatisant l'installation des agents Wazuh sur les ordinateurs des employés via Intune, nous assurons une surveillance cohérente et fiable.
-
-Notre déploiement de Wazuh renforce la sécurité de notre infrastructure en simplifiant la surveillance et en automatisant le déploiement des agents.
-Ainsi, Wazuh nous permet de réagir de manière proactive pour assurer la protection continue de notre entreprise.
-
-\subsubsection{Docusaurus : Centralisation des Procédures}
-Dans le but de simplifier l'accès aux procédures clés, nous avons créé une documentation en ligne en utilisant Docusaurus.
-Cette plateforme nous permet de regrouper et de présenter de manière conviviale diverses procédures pour optimiser notre efficacité et garantir une expérience homogène.
-
-Notre documentation, hébergée sur un PC \todo{reconditionné ou réadapté} exécutant Ubuntu, est accessible via une adresse IP locale, garantissant ainsi une accessibilité limitée aux collaborateurs.
-
-Nous avons segmenté les procédures en deux volets :
-\begin{itemize}
-    \item \textbf{Procédures Employés :} Cette section couvre une variété d'outils et de situations pratiques, allant de l'utilisation de Google Drive à l'accueil d'un nouvel employé.
-    Elle inclut également des astuces pour résoudre les problèmes informatiques courants et réagir en cas de suspicion de piratage.
-    \item \textbf{Procédures Sysadmin :} Cette sous-section se penche sur les tâches spécifiques aux administrateurs système.
-    Elle détaille des étapes telles que l'ajout de ressources via l'interface de Sophos, la gestion des agents et des ressources sur les PC des employés, ainsi que des instructions pour le nettoyage et le recyclage des appareils de stockage.
-    De plus, elle propose des protocoles pour la création et la suppression de comptes d'employés, ainsi que des directives à suivre en cas d'attaque cyber.
-\end{itemize}
-
-En choisissant d'utiliser Docusaurus pour notre documentation, nous renforçons notre capacité à partager et à transmettre efficacement les connaissances internes au sein de notre équipe.
-Cela assure que chaque nouveau membre, qu'il soit employé ou administrateur système, dispose des ressources de base nécessaires pour comprendre le contexte d'utilisation et les règles de l'entreprise.
-
+Cette approche holistique de la cybersécurité a permis de renforcer notre positionnement tout en garantissant la stabilité et la performance de notre environnement informatique.
 
 \subsection{Retour et critiques sur le projet}
-\subsubsection{Pas ou peu de réduction des risques et création de nouveaux risques}
+Après environ un mois et demi de mise en place du projet, nous avons organisé une réunion rétrospective pour évaluer son utilité et son impact.
+Il est apparu que malgré nos efforts, le projet a entraîné certaines difficultés pour de nombreux collègues lors de sa mise en œuvre.
+
+\subsubsection{Effets contradictoires sur la sécurité}
+Les mesures mises en place n'ont pas toujours contribué de manière significative à la réduction des risques, et dans certains cas, elles ont même posé de nouvelles contraintes aux collaborateurs.
+Par exemple, l'utilisation d'outils complexes a parfois créé une dépendance envers une seule personne, en l'occurrence l'administrateur système Théo Delgutte.
+Cette situation est devenue problématique lors de ses périodes de congés, entraînant des retards et des perturbations dans les opérations.
+
+\subsubsection{Perte de stabilité}
+Un autre défi que nous avons rencontré concerne la stabilité des outils utilisés par les collaborateurs de l'entreprise.
+Les modifications apportées en cours de route par le sysadmin ont souvent impacté les ressources et les services, générant ainsi une instabilité préjudiciable au bon fonctionnement quotidien.
+Cette instabilité a été particulièrement préoccupante pour les employés travaillant à distance, car elle a rendu difficile voire impossible le travail en télétravail sans préavis.
 
 \subsubsection{Perte de l'autonomie}
+La décision de limiter les accès aux ressources a également eu des répercussions négatives sur le fonctionnement général de l'entreprise.
+Étant donné que le développement de différentes parties du projet est interconnecté et que la documentation d'une partie peut être utile à un autre groupe de personnes, la limitation des accès a entravé la fluidité de la collaboration.
+De plus, en tant qu'entreprise de petite taille, les contraintes imposées par cette limitation d'accès semblaient disproportionnées par rapport à d'autres risques potentiellement plus importants.
 
 
 \subsection{Modification des objectifs}
-\subsubsection{Eductation cyber}
-prez hebdo
+Cette section aborde les ajustements apportés aux objectifs initiaux, visant à résoudre les problèmes identifiés et à reprendre les points bloquants du projet en main.
 
-gophish:
+\subsubsection{Éducation à la cybersécurité}
+Au cœur de la cybersécurité réside une composante essentielle : l'éducation des employés pour réduire les risques potentiels.
+Dans cette optique, j'ai joué un rôle clé en sensibilisant l'entreprise à l'importance de la cybersécurité grâce à des présentations hebdomadaires.
+Ces sessions ont couvert une variété de sujets visant à renforcer la vigilance et les bonnes pratiques parmi les collaborateurs.
 
-- scrapping de sites officiels
+Parmi les thèmes abordés, nous avons offert un guide complet sur l'hygiène de la cybersécurité.
+Cela comprenait des conseils pratiques pour naviguer en toute sécurité en ligne, en mettant l'accent sur la prudence face au public, la reconnaissance des extensions de fichiers, la détection d'URL malveillantes et l'utilisation de bloqueurs de traqueurs pour contrôler les publicités et les cookies.
 
-- scrapping d'emails officiels
+Une attention particulière a été portée sur l'utilisation de gestionnaires de mots de passe pour renforcer la sécurité des comptes en ligne.
+Nous avons également abordé les risques liés aux emails malveillants, aux spams et au phishing, en fournissant des méthodes pour les identifier et les éviter.
 
-- lancement potentiels d'une campagne ?
-
+Un volet notable de mon travail a consisté à explorer et utiliser l'outil Gophish pour la création d'une campagne de sensibilisation interne sur le phishing.
+J'ai récupéré le code source de sites officiels de microsoft et Gitlab ainsi que d'emails officiels des mêmes groupes dans le but de montrer comment des attaquants pourraient collecter des informations sensibles.
+Par la suite, j'ai conçu un message contenant un lien malicieux pour simuler une campagne de phishing.
+Une présentation détaillée a ensuite été faite, mettant en lumière des exemples de personnes ayant été trompées par de telles attaques.
 
 \subsubsection{Mise en place d'une infrastructure alternative}
-infra changeante --- retiré le wazuh et sophos ztna
+Les outils trop complexes à maintenir en condition opérationnel pour leur coût humain ont été retirés : les agents Wazuh et Sophos ZTNA ont donc été désinstallés pour cette raison.
+
+Un membre de l'entreprise - Rémy Dufrenoy - a également pris de son temps de travail pour créer sur une nouvelle infrastructure, plus simple pour pouvoir bénéficier d'environnements de travail stables sur lequels lui et ses collègues pourront travailler.
 
 \subsubsection{Modification des droits et autorisations}
-gestionnaire de mdp de sysadmin
+Les employés d'Amiral Technologies ont également bénéficié de plus de droits d'accès aux ressources générées par leurs collègues permettant une efficacité de travail plus grande.
 
+En parallèle, un groupe de responsables de l'administration du système fut mis en place pour limiter la création d'un point unique de dépendances.
+Une base de données sécurisée de mot de passe contenant les identifiants administrateur pour les ressources fut également créé et partagé entre les responsables.
 
-\subsection{Enseignements tirés}
-\subsubsection{Importance de faire des choix éclairés}
+\subsection{Enseignements appris}
+Dans la section qui suit, je partagerai les enseignements que j'ai acquis au cours de cette expérience.
+\subsubsection{Prise de Décisions Éclairées}
+Lors de la genèse du projet visant à renforcer la sécurité de l'entreprise, les décisions initiales ont été influencées par des parties prenantes qui manquaient de connaissances approfondies concernant les complexités liées à la réalisation des objectifs.
+Ces choix ont été largement motivés par la pression des clients, avec la présidente de l'entreprise prenant la décision finale.
+Un constat majeur qui émerge est l'importance de consulter des représentants de l'entreprise possédant une perspective éclairée et une compréhension approfondie des enjeux.
+Une telle approche permettrait de mieux évaluer la faisabilité et la pertinence des tâches envisagées.
 
-\subsubsection{Importance de la communication}
-pk on a des pb into retirer cybersécu : communication aux choux
-phrase d'intro : on ne s'imaginerait pas que faire du sysadmin implique autant le contact humain 
+Une composante essentielle de ce processus est la capacité à identifier les risques majeurs inhérents à chaque décision.
+Cette identification proactive est cruciale pour hiérarchiser et mettre en œuvre des mesures ayant un impact significatif sur la réduction des risques et la réussite globale du projet.
+
+\subsubsection{Communication Essentielle}
+Lorsque des problèmes ont conduit à des retours en arrière, l'absence de communication adéquate a souvent été à l'origine de ces situations.
+Par exemple, lors de la mise en place de nouvelles restrictions d'accès, les utilisateurs n'ont pas été prévenus des changements à venir.
+Cela a provoqué des frustrations et des interruptions dans leur travail quotidien.
+
+Convaincre plutôt qu'imposer est essentiel pour éviter de mécontenter les utilisateurs des services concernés.
+Par exemple, au lieu d'imposer des nouvelles politiques de sécurité, il serait préférable de présenter les raisons derrière ces changements et d'offrir des solutions alternatives pour minimiser les perturbations.
+
+L'importance de l'aspect humain, même dans le domaine de l'administration système, est devenue évidente.
+Par exemple, lorsque le système d'exploitation d'un ordinateur ne fonctionnait plus en raison d'un problème matériel, expliquer aux utilisateurs la nature du problème et les étapes prises pour le résoudre.
 
 \subsubsection{L'isopérimètrie dans le monde de l'entreprise}
 Dans le contexte professionnel actuel, équilibrer l'efficacité au travail et la cybersécurité est crucial.
@@ -161,4 +145,3 @@ Le défi réside dans la recherche du bon équilibre entre des mesures de sécur
 Cela exige des solutions astucieuses de la part des administrateurs système.
 L'objectif ultime étant de créer un environnement où la sécurité est maximisée tout préservant la capacité à livrer de la valeur.
 
-\subsubsection{Identification des riques}
