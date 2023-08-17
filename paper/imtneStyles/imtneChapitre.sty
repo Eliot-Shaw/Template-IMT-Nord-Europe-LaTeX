@@ -1,23 +1,27 @@
 % Macro pour la page de chapitre personnalisée
 \newcommand{\imtnechapitre}[1]{%
   \clearpage
-  \thispagestyle{empty} % Pas de header, footer ou numéro de page
-  \newgeometry{top=25pt, bottom=25pt, inner=30pt, outer=30pt}
   \phantomsection
   \addcontentsline{toc}{chapter}{#1}
   \setcounter{chapter}{\thechapter+1}
-  \vspace*{\fill}
-  \textbf{\Huge{#1}}
-  \vspace*{\fill}
-  \begin{flushright}
+  \setcounter{section}{0}
+  \setcounter{subsection}{0}
+  \setcounter{subsubsection}{0}
+  
+  \noindent % doit etre accollé à la figure
+  \begin{minipage}[c]{0.13\textwidth}
     \begin{tikzpicture}
-      \filldraw[draw=imtneCeleste,fill=imtneCeleste] (-4.5\imtneGetEltSize,-4.5\imtneGetEltSize) -- (0,0) -- (0,-4.5\imtneGetEltSize) -- cycle;
-      \filldraw[draw=imtneMarine,fill=imtneMarine] (0,0) -- (-2.5\imtneGetEltSize,-2.5\imtneGetEltSize) -- (0,-2.5\imtneGetEltSize) -- cycle;
-      \filldraw[draw=imtneAmbre,fill=imtneAmbre] (-2.5\imtneGetEltSize,-4.5\imtneGetEltSize) -- (0,-4.5\imtneGetEltSize) -- (0,-2.5\imtneGetEltSize) -- cycle;
+      \filldraw[draw=imtneCeleste,fill=imtneCeleste]  (1\imtneGetEltSize,1\imtneGetEltSize) -- (0.5,1\imtneGetEltSize) -- (0\imtneGetEltSize,0.5\imtneGetEltSize) -- (0.5\imtneGetEltSize,0.5\imtneGetEltSize) -- cycle;
+      \filldraw[draw=imtneMarine,fill=imtneMarine]    (0\imtneGetEltSize,0\imtneGetEltSize) -- (0.5\imtneGetEltSize,0.5\imtneGetEltSize) -- (0\imtneGetEltSize,0.5\imtneGetEltSize) -- cycle;
+      \filldraw[draw=imtneAmbre,fill=imtneAmbre]      (0.5\imtneGetEltSize,1\imtneGetEltSize) -- (0\imtneGetEltSize,1\imtneGetEltSize) -- (0\imtneGetEltSize,0.5\imtneGetEltSize) -- cycle;
     \end{tikzpicture}
-  \end{flushright}
-  \clearpage
-  \restoregeometry % Rétablir la géométrie par défaut
-  \pagestyle{fancy}
+  \end{minipage}%
+  \begin{minipage}[c]{0.87\textwidth}
+    \color{imtneCeleste}\fontsize{30}{30}\selectfont\bfseries #1 \par
+  \end{minipage}%
+  \vspace{10px}
 
 }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,22 +1,55 @@
 \documentclass[a4paper,12pt]{report}
 
 % Packages et configuration du header
-\input{paper/header}
+\input{paper/imtneStyles/header}
 
 
 \begin{document}
+
+% \input{paper/imtneStyles/_ptodo}
+
 % Page de garde
 \imtnepagedegarde
-    {Template IMT Nord Europe} % Titre
-    {Sous le langage LaTeX} % Sous-titre
-    {SHAW Eliot} % Auteur
+    {Administration système\\\hphantom f \qquad et Intégration continue} % Titre
+    {Rapport de stage} % Sous-titre
+    {SHAW Eliot\\Institut Mines Télécom Nord Europe\\\vspace{5px}Fise 2025} % Auteur
+    {Paul Fush}
+    {Théo Delgutte\\\phantom{lul}\qquad\qquad\qquad \phantom{lul}Rémy Dufrenoy}
+
+\cleardoublepage
+% Remerciements
+\input{paper/content/remerciements}
+
+\clearpage
 
 % Table des matières
 \tableofcontents
+\clearpage
+
+% Mots Clés et Abstract
+\input{paper/content/abstract}
+\input{paper/content/mots_cles}
 
 % Content
-\imtnechapitre{Chapitre 1 : Votre contenu}
-\input{paper/content/yourContentHere}
+\imtnechapitre{Introduction}
+\input{paper/content/introduction}
+\input{paper/content/contexte}
 
-\printbibliography
+\imtnechapitre{Travaux réalisés}
+\input{paper/content/trav-intro}
+\input{paper/content/trav-sys}
+\input{paper/content/trav-gitlab-ci}
+
+
+\imtnechapitre{Impressions personnelles}
+\input{paper/content/retour_perso}
+
+\imtnechapitre{Conclusion}
+\input{paper/content/conclusion}
+
+\cleardoublepage
+
+\imtnechapitre{Annexes et Bibliographie}
+\input{paper/content/annexes-biblio}
+
 \end{document}

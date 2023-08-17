@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-
+ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                          P A C K A G E S                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,10 +25,11 @@
 \usepackage{calc}
 \usepackage{tikz}
 \usepackage{adjustbox}
+\usepackage{pifont}
 
-
-\usepackage{paper/imtneStyles/imtneChapitre}
 \usepackage{paper/imtneStyles/imtnePageDeGarde}
+\usepackage{paper/imtneStyles/imtneChapitre}
+\usepackage{paper/imtneStyles/imtnePart}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                            C O L O R S                            %
@@ -37,8 +38,11 @@
 \definecolor{imtneAmbre}{HTML}{fbba00}
 \definecolor{imtneAmbreText}{HTML}{f0ab00}
 \definecolor{imtneCeleste}{HTML}{00b8de}
+\definecolor{imtneCeleste}{HTML}{00b8de}
 \definecolor{imtneMarine}{HTML}{001f41}
+\definecolor{imtneMarineText}{HTML}{09192b}
 \definecolor{imtneGris}{HTML}{eaeaea}
+\color{imtneMarineText}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %              G E O M E T R Y   A N D   W I D G E T S              %
@@ -58,7 +62,7 @@
   heightrounded
 }
 
-\setitemize[1]{label=\textcolor{imtneCeleste}{\small\ding{228}}}
+\setitemize[1]{label=\textcolor{imtneCeleste}{\ding{228}}}
 \setitemize[2]{label=\textbullet}
 \setenumerate[1]{font=\bf\color{imtneCeleste}}
 \setenumerate[2]{font=\color{imtneMarine}}
@@ -66,30 +70,16 @@
 \fancyhead[L]{\includegraphics[width=2cm]{paper/figures/imtne.png}}
 \fancyhead[R]{\rightmark}
 
-\newcommand{\authornamefooter}{Shaw E.}
-\fancyfoot[LO]{\authornamefooter}
-\fancyfoot[LE]{\authornamefooter}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                      B I B L I O G R A P H Y                      %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage[
-	style=numeric-comp,
-	sorting=none,
-	hyperref,
-	singletitle=true,
-	backend=biber]{biblatex}
-
-\addbibresource{paper/bib/bibliography.bib}
+\newcommand{\authorShort}{Shaw E.}
+\fancyfoot[LO]{\authorShort}
+\fancyfoot[LE]{\authorShort}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                           M A C R O S                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\g}{Google Nearby Connections\xspace}
-\newcommand{\cl}{\textsc{ClickLeague}\xspace}
-\newcommand{\voidtext}{\xspace}
+% \newcommand{\g}{Google Nearby Connections\xspace}
+% \newcommand{\cl}{\textsc{ClickLeague}\xspace}
 
 \def\imtneGetEltSize{%
   \ifdim \paperwidth < \paperheight
@@ -109,6 +99,6 @@
   }%
 }}
 
-\newcommand{\todo}[1]{\annote{#1}{Todo}{imtneCeleste}}
+\newcommand{\todo}[1]{\annote{#1}{Todo}{imtneAmbreText}}
 \newcommand{\td}{\annote{}{}{imtneAmbreText}}
 \newcommand{\note}[1]{\annote{#1}{Note}{imtneGris}}

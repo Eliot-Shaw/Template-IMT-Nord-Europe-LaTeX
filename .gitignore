@@ -2,10 +2,8 @@
 *.aux
 *.out
 *.toc
-*.bcf
-*.xml
-*.bbl
-*.blg
 *.bbl
 *.bcf
 *.blg
+*.run.xml
+*.tdo
