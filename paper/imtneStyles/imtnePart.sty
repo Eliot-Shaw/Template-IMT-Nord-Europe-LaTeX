@@ -1,0 +1,29 @@
+% Macro pour la page de part personnalisée
+\newcommand{\imtnepart}[1]{%
+  \clearpage
+  \thispagestyle{empty} % Pas de header, footer ou numéro de page
+  \newgeometry{top=25pt, bottom=25pt, inner=30pt, outer=30pt}
+  \phantomsection
+  \addcontentsline{toc}{part}{#1}
+  \setcounter{part}{\thepart+1}
+  \setcounter{chapter}{0}
+  \setcounter{section}{0}
+  \setcounter{subsection}{0}
+  \setcounter{subsubsection}{0}
+  \vspace*{\fill}
+  {\color{imtneAmbreText}\fontsize{40}{40}\selectfont\bfseries #1 \par}
+  \vspace*{\fill}
+  \begin{flushright}
+    \begin{tikzpicture}
+      \filldraw[draw=imtneCeleste,fill=imtneCeleste] (-4.5\imtneGetEltSize,-4.5\imtneGetEltSize) -- (0,0) -- (0,-4.5\imtneGetEltSize) -- cycle;
+      \filldraw[draw=imtneMarine,fill=imtneMarine] (0,0) -- (-2.5\imtneGetEltSize,-2.5\imtneGetEltSize) -- (0,-2.5\imtneGetEltSize) -- cycle;
+      \filldraw[draw=imtneAmbre,fill=imtneAmbre] (-2.5\imtneGetEltSize,-4.5\imtneGetEltSize) -- (0,-4.5\imtneGetEltSize) -- (0,-2.5\imtneGetEltSize) -- cycle;
+    \end{tikzpicture}
+  \end{flushright}
+  \clearpage
+  \restoregeometry % Rétablir la géométrie par défaut
+  \pagestyle{fancy}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
