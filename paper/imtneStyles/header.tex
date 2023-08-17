@@ -31,6 +31,7 @@
 \usepackage{paper/imtneStyles/imtneChapitre}
 \usepackage{paper/imtneStyles/imtnePart}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                            C O L O R S                            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,10 +43,11 @@
 \definecolor{imtneMarine}{HTML}{001f41}
 \definecolor{imtneMarineText}{HTML}{09192b}
 \definecolor{imtneGris}{HTML}{eaeaea}
-\color{imtneMarineText}
+\color{imtneMarineText} % Couleur du texte
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%              G E O M E T R Y   A N D   W I D G E T S              %
+%                          G E O M E T R Y                          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \geometry{
@@ -62,24 +64,27 @@
   heightrounded
 }
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                     C U S T O M I Z A T I O N                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Bullet points
 \setitemize[1]{label=\textcolor{imtneCeleste}{\ding{228}}}
 \setitemize[2]{label=\textbullet}
 \setenumerate[1]{font=\bf\color{imtneCeleste}}
 \setenumerate[2]{font=\color{imtneMarine}}
 
+% Headers et Footers
 \fancyhead[L]{\includegraphics[width=2cm]{paper/figures/imtne.png}}
 \fancyhead[R]{\rightmark}
-
-\newcommand{\authorShort}{Shaw E.}
 \fancyfoot[LO]{\authorShort}
 \fancyfoot[LE]{\authorShort}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                           M A C R O S                             %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \newcommand{\g}{Google Nearby Connections\xspace}
-% \newcommand{\cl}{\textsc{ClickLeague}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                            M A C R O S                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\imtneGetEltSize{%
   \ifdim \paperwidth < \paperheight
@@ -100,5 +105,5 @@
 }}
 
 \newcommand{\todo}[1]{\annote{#1}{Todo}{imtneAmbreText}}
-\newcommand{\td}{\annote{}{}{imtneAmbreText}}
+\newcommand{\td}{\annote{}{}{imtneCeleste}}
 \newcommand{\note}[1]{\annote{#1}{Note}{imtneGris}}
