@@ -7,8 +7,7 @@
 
 \begin{document}
 
-% \input{paper/imtneStyles/_ptodo}
-
+\pagenumbering{Roman}
 % Page de garde
 \imtnepagedegarde
     {Administration système\\\hphantom f \qquad et Intégration continue} % Titre
@@ -29,7 +28,7 @@
 % Table des matières
 \tableofcontents
 \clearpage
-
+\pagenumbering{arabic}
 % Mots Clés et Abstract
 \input{paper/content/abstract}
 \input{paper/content/mots_cles}
@@ -55,5 +54,17 @@
 
 \imtnechapitre{Annexes et Bibliographie}
 \input{paper/content/annexes-biblio}
+
+
+
+\section{First Section}
+This document is an example of BibTeX using in bibliography management. Three items are cited: \textit{The \LaTeX\ Companion} book \cite{latexcompanion}, the Einstein journal paper \cite{einstein}, and the Donald Knuth's website \cite{knuthwebsite}. The \LaTeX\ related items are \cite{latexcompanion,knuthwebsite}. 
+
+\medskip
+
+%Sets the bibliography style to UNSRT and imports the 
+%bibliography file "sample.bib".
+\bibliographystyle{unsrt}
+\bibliography{paper/bibliography/biblio}
 
 \end{document}
