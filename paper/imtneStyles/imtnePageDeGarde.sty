@@ -1,15 +1,23 @@
-\newcommand{\imtnepagedegarde}[5]{%
+\newcommand{\imtnepagedegarde}[8]{%
   \clearpage
   \newgeometry{top=25pt, bottom=30pt, inner=20pt, outer=30pt}
   \thispagestyle{empty} % Pas de header, footer ou numéro de page
 
   \begin{minipage}[c]{0.4\textwidth}
-    Tuteur interne : #4\\Maîtres de stage : #5
+    Tuteur interne : #6
     
-    \vspace{140px}
-    \large \today\par % Date d'aujourd'hui en noir
+    Maîtres de stage : #7
+    \vspace{145px}
+
+    \large \today % Date d'aujourd'hui
     \vspace{10px}
-    \large {#3}\par % Auteur(s) du document en noir
+
+    \large {#3} % Auteur(s) du document
+
+    \large {#4} % Nom de l'école
+
+    \large {#5} % Promotion
+
     \vspace{1cm}
   \end{minipage}%
   \begin{minipage}[c]{0.6\textwidth}
@@ -21,21 +29,23 @@
       \end{tikzpicture}
     \end{flushright}
   \end{minipage}
-
   \vspace{35pt}
-  {\color{imtneAmbreText}\fontsize{40}{40}\selectfont\bfseries #1 \par}
-  \vspace{1cm}
-  {\color{imtneAmbreText}\huge\bfseries #2}
+
+  {    
+    {\noindent\color{imtneAmbreText}\fontsize{40}{0}\selectfont\bfseries #1} % Si le texte dépasse une ligne - utiliser \\
+    \vspace{0.5cm}
+    
+    {\color{imtneAmbreText}\huge\bfseries #2}
+  }
 
   \vspace*{\fill}
 
   \begin{tikzpicture}[overlay, remember picture]
     \node[anchor=south west] at (current page.south west) {\includegraphics[height=5cm]{paper/figures/imtne.png}};
-    \node[anchor=south east] at (current page.south east) {\includegraphics[height=4.5cm]{paper/figures/amiralogo.pdf}};
+    \node[anchor=south east] at (current page.south east) {\includegraphics[height=4.5cm]{#8}};
   \end{tikzpicture}
   
-  \clearpage
+  \cleardoublepage
   \restoregeometry % Rétablir la géométrie par défaut
-\pagestyle{fancy}
-
+  \pagestyle{fancy}
 }
