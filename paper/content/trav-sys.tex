@@ -101,10 +101,21 @@ Cela comprenait des conseils pratiques pour naviguer en toute sécurité en lign
 Une attention particulière a été portée sur l'utilisation de gestionnaires de mots de passe pour renforcer la sécurité des comptes en ligne.
 Nous avons également abordé les risques liés aux emails malveillants, aux spams et au phishing, en fournissant des méthodes pour les identifier et les éviter.
 
-Un volet notable de mon travail a consisté à explorer et utiliser l'outil Gophish pour la création d'une campagne de sensibilisation interne sur le phishing.
-J'ai récupéré le code source de sites officiels de microsoft et Gitlab ainsi que d'emails officiels des mêmes groupes dans le but de montrer comment des attaquants pourraient collecter des informations sensibles.
+Un volet de mon travail a consisté à explorer et utiliser l'outil Gophish pour la création d'une campagne de sensibilisation interne sur le phishing.
+J'ai récupéré le code source de sites officiels de Microsoft et Gitlab ainsi que d'emails officiels des mêmes groupes dans le but de montrer comment des attaquants pourraient collecter des informations sensibles.
 Par la suite, j'ai conçu un message contenant un lien malicieux pour simuler une campagne de phishing.
-Une présentation détaillée a ensuite été faite, mettant en lumière des exemples de personnes ayant été trompées par de telles attaques.
+On peut voir ci-dessous le sondage que j'ai envoyé aux membres de l'entreprise concernant le lien présent dans mon message qui ne concernaît que les membres de l'entreprise présent dans les locaux au moment de la campagne.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.66\textwidth]{paper/figures/poll.png}
+    \caption{Résultats du sondage concernant le lien de phishing}
+    \label{fig:poll}
+\end{figure}
+
+Une présentation détaillée a ensuite été faite, présentant les résultats pour objectif de convaincre qu'une attaque informatique peut arriver à tout moment et faire une erreur est possible.
+Le but de la présentation n'est pas de stigmatiser les personnes s'ayant fait avoir par la campagne mais de permettre aux employés d'aborder le sujet sans tabou pour les habituer à annoncer s'ils ont été victimes d'une attaque.
+
 
 \subsubsection{Mise en place d'une infrastructure alternative}
 Les outils trop complexes à maintenir en condition opérationnel pour leur coût humain ont été retirés : les agents Wazuh et Sophos ZTNA ont donc été désinstallés pour cette raison.
