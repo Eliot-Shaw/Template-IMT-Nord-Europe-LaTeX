@@ -32,12 +32,26 @@ Ceci permet aux services de se faire référence mutuellement par leur nom de se
 \subsubsection{Architecture globale de Diagfit}
 Les développeurs travaillaient sur la dernière version en production : Diagfit 2.5.
 
-\todo{mettre drawio archi globale 2.5}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{paper/figures/archi2-5.png}
+    \caption{Architecture globale de Diagfit 2.5}
+    \label{fig:archi2-5}
+\end{figure}
 
 Ci-dessus, l'architecture globale de l'application Diagfit avec tous leur services.
 Suite à une refactorisation de l'application, le système s'est grandement simplifié.
 
-\todo{mettre drawio archi globale 2.6}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.66\textwidth]{paper/figures/archi2-6.pdf}
+    \caption{Architecture globale du nouveau Diagfit 2.6}
+    \label{fig:archi2-6}
+\end{figure}
+
+La réduction des services a permis aux développeurs de travailler avec une couche de complexité en moins tout en conservant les mêmes fonctionnalités.
+
+D'un point de vue de l'automatisation des processus, la réduction des services est synonyme avec une réduction du temps de création des environnements.
 
 \subsubsection{Utilisation de Docker et Docker compose}
 L'image Docker utilisée pour Diagfit lors de la CI présentait une complexité considérable dans la définition de l'environnement de l'application.
