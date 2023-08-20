@@ -1,18 +1,18 @@
 \section{Intégration continue}
 \subsection{Technologies utilisées}
 \subsubsection{Intégration Continue (CI) avec GitLab}
-L'intégration continue (CI) est une pratique de développement logiciel visant à automatiser et à faciliter le processus de construction et de test d'une application.
+L'intégration continue (CI) est une pratique de développement logiciel visant à automatiser et à faciliter le processus de construction et de tests d'une application.
 
 Diagfit est construit et testé sur la plate-forme de gestion de développement GitLab à l'aide d'une série de tâches automatisées, appelées "jobs", qui sont exécutées séquentiellement en réponse aux changements du code source.
 
 \subsubsection{Docker}
-Docker est une plate-forme de conteneurisation légère qui permet de créer, gérer et exécuter des applications dans des conteneurs.
-Les conteneurs Docker encapsulent le code, les bibliothèques et les dépendances d'une application, garantissant une exécution cohérente et prévisible quel que soit l'environnement.
+Docker est une plate-forme de "conteneurisation" légère qui permet de créer, gérer et exécuter des applications dans des conteneurs.
+Les conteneurs Docker encapsulent le code, les bibliothèques et les dépendances d'une application, garantissent une exécution cohérente et prévisible quel que soit l'environnement.
 Contrairement aux machines virtuelles traditionnelles, les conteneurs partagent le noyau du système hôte, ce qui les rend plus efficaces en termes de ressources.
 
 L'un des avantages clés de Docker est sa portabilité.
 Un fichier descriptif unique, appelé "Dockerfile", est responsable de la création du conteneur.
-Grâce à Docker, vous pouvez empaqueter votre application ainsi que ses dépendances dans un conteneur unique, puis le déplacer sans effort entre différents environnements tels qu'un ordinateur portable de développement, un serveur de production ou un cloud public.
+Grâce à Docker, on peut empaqueter votre application ainsi que ses dépendances dans un conteneur unique, puis le déplacer sans effort entre différents environnements tels qu'un ordinateur portable de développement, un serveur de production ou un cloud public.
 
 Docker utilise des images pour définir le contenu et la configuration d'un conteneur.
 Les images Docker sont des modèles immuables qui contiennent tout ce dont un conteneur a besoin pour s'exécuter.
@@ -30,7 +30,7 @@ Ceci permet aux services de se faire référence mutuellement par leur nom de se
 
 \subsection{Environnement de développement}
 \subsubsection{Architecture globale de Diagfit}
-Les développeurs travaillaient sur la dernière version en production : Diagfit 2.5.
+Les développeurs travaillent sur la dernière version en production : Diagfit 2.5.
 
 \begin{figure}[ht!]
     \centering
@@ -39,7 +39,7 @@ Les développeurs travaillaient sur la dernière version en production : Diagfit
     \label{fig:archi2-5}
 \end{figure}
 
-Ci-dessus, l'architecture globale de l'application Diagfit avec tous leur services.
+Ci-dessus, l'architecture globale de l'application Diagfit avec tous leurs services.
 Suite à une refactorisation de l'application, le système s'est grandement simplifié.
 
 \begin{figure}[ht!]
@@ -73,18 +73,18 @@ En effet, étant donné que le téléchargement des packages utilisés pour le l
 De plus, en réduisant le nombre de services utilisés, nous avons pu éliminer certains éléments du fichier docker-compose, contribuant ainsi à accélérer le temps de lancement de l'application.
 
 \subsubsection{Création de multiples Dockerfiles}
-Dans le cadre de la mission qui m'a été confiée, l'une des priorités était d'assurer une homogénéité entre l'environnement de développement sur l'ordinateur des développeurs backend et celui utilisé sur la plateforme CI de GitLab.
+Dans le cadre cette mission, l'une des priorités était d'assurer une homogénéité entre l'environnement de développement sur l'ordinateur des développeurs backend et celui utilisé sur la plateforme CI de GitLab.
 Pour répondre à ce besoin crucial, j'ai entrepris la création de plusieurs Dockerfiles distincts, chacun adapté à un aspect spécifique du processus de développement.
 
 L'un des résultats significatifs de cette initiative a été la mise en place de deux images Docker distinctes : l'une conçue spécifiquement pour le rendu de l'application, et l'autre optimisée pour les phases de développement et de tests unitaires.
 
 L'intégration de Docker dans notre flux de travail au sein de GitLab a apporté des améliorations significatives, mais elle a également nécessité des ajustements dans l'environnement de travail de la plateforme.
-Lors de la transition vers une approche basée sur Docker, nous avons rencontré un défi majeur : comment gérer le processus de construction d'images de manière automatisée tout en assurant la flexibilité nécessaire pour le développement et les tests.
+Lors de la transition vers une approche basée sur Docker, nous avons rencontré un défi majeur : comment gérer le processus de construction d'images de manière automatisée tout en assurant la flexibilité nécessaire pour le développement et les tests ?
 
 Pour résoudre ce défi, nous avons mis en place un mécanisme ingénieux : nous avons introduit une image Docker générique, spécialement conçue pour la construction d'images.
 Cette approche nous a permis d'automatiser la génération des images et de maintenir un niveau élevé de cohérence entre les différentes étapes du processus.
 
-Cependant, tout ne s'est pas déroulé sans accroc.
+Cependant, tout ne s'est pas déroulé sans accrocs.
 Lors de l'implémentation de cette nouvelle approche au sein de la CI GitLab, nous avons constaté que certaines variables définies dans le dockerfile ne s'appliquaient pas correctement aux jobs en cours d'exécution.
 Après une analyse minutieuse, nous avons identifié que certaines variables étaient déjà définies au niveau de l'environnement GitLab en tant que variables globales, ce qui entraînait des conflits.
 Nous avons rapidement résolu ce problème en utilisant des variables personnalisées spécifiques au programme, ce qui a permis de garantir la cohérence des configurations et d'éviter les problèmes de sécurité : la variable fixée globalement était une donnée sensible.
@@ -93,7 +93,7 @@ Nous avons rapidement résolu ce problème en utilisant des variables personnali
 Les changements apportés à l'environnement de développement ont eu des répercussions positives, notamment :
 \begin{itemize}
     \item Réduction significative du temps d'exécution des tests : Le temps d'exécution du job de test a été réduit de 12 minutes 30 secondes à seulement 11 minutes 15 secondes.
-    Cette amélioration a permis aux développeurs de gagner un temps précieux lors de l'exécution des tests, ce qui a contribué à augmenter leur productivité.
+    Cette amélioration a permis aux développeurs de gagner du temps lors de l'exécution des tests, ce qui a contribué à augmenter leur productivité.
     \item Amélioration de la cohérence et de la robustesse de l'infrastructure : L'utilisation de Docker et la restructuration de la GitLab CI ont renforcé la cohérence et la robustesse de notre infrastructure de développement.
     La séparation des images et des environnements spécifiques a considérablement réduit les risques d'incohérence entre les différentes étapes du processus.
     \item Gains de temps pour les développeurs : En éliminant la nécessité de recréer continuellement l'environnement de test, les développeurs ont pu économiser un temps précieux.
