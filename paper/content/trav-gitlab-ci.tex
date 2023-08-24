@@ -12,7 +12,8 @@ Les conteneurs Docker encapsulent le code, les bibliothèques et les dépendance
 Contrairement aux machines virtuelles traditionnelles, les conteneurs partagent le noyau du système hôte, ce qui les rend plus efficaces en termes de ressources.
 
 L'un des avantages clés de Docker est sa portabilité.
-Un fichier descriptif unique, appelé "Dockerfile", est responsable de la création du conteneur.
+Un fichier descriptif unique, appelé "dockerfile", est responsable de la création de l'image, il est ensuite possible de créer un processus basé sur les fichiers, executables et sur l'environnement définis dans cette image.
+Ce processus est appelé container.
 Grâce à Docker, on peut empaqueter votre application ainsi que ses dépendances dans un conteneur unique, puis le déplacer sans effort entre différents environnements tels qu'un ordinateur portable de développement, un serveur de production ou un cloud public.
 
 Docker utilise des images pour définir le contenu et la configuration d'un conteneur.
@@ -24,7 +25,7 @@ Docker Compose est un outil simplifiant la gestion d'applications composées de 
 Plutôt que de nécessiter une gestion manuelle de chaque conteneur et de ses paramètres respectifs, Docker Compose offre la possibilité de définir l'ensemble de la configuration d'une application dans un fichier "docker-compose.yml".
 
 Dans ce fichier, les services sont spécifiés, lesquels constituent les divers composants de l'application, incluant leurs images Docker, les ports exposés, les variables d'environnement et d'autres options de configuration.
-En utilisant la commande docker-compose up, il est possible de lancer simultanément tous les conteneurs, instaurant un environnement cohérent pour l'application.
+En utilisant la commande docker-compose up, il est possible de créer et lancer simultanément tous les conteneurs, instaurant un environnement cohérent pour l'application.
 
 De plus, Docker Compose simplifie la communication entre les conteneurs d'une application en mettant en place un réseau virtuel par défaut.
 Ceci permet aux services de se faire référence mutuellement par leur nom de service.
@@ -93,10 +94,9 @@ Nous avons rapidement résolu ce problème en utilisant des variables personnali
 \subsubsection{Impacts bénéfiques}
 Les changements apportés à l'environnement de développement ont eu des répercussions positives, notamment :
 \begin{itemize}
-    \item Réduction significative du temps d'exécution des tests : Le temps d'exécution du job de test a été réduit de 12 minutes 30 secondes à seulement 11 minutes 15 secondes.
-    Cette amélioration a permis aux développeurs de gagner du temps lors de l'exécution des tests, ce qui a contribué à augmenter leur productivité.
-    \item Amélioration de la cohérence et de la robustesse de l'infrastructure : L'utilisation de Docker et la restructuration de la GitLab CI ont renforcé la cohérence et la robustesse de notre infrastructure de développement.
+    \item \textbf{Amélioration de la cohérence et de la robustesse de l'infrastructure :} L'utilisation de Docker et la restructuration de la GitLab CI ont renforcé la cohérence et la robustesse de notre infrastructure de développement.
     La séparation des images et des environnements spécifiques a considérablement réduit les risques d'incohérence entre les différentes étapes du processus.
-    \item Gains de temps pour les développeurs : En éliminant la nécessité de recréer continuellement l'environnement de test, les développeurs ont pu économiser un temps précieux.
+    \item \textbf{Gains de temps pour les développeurs :} En éliminant la nécessité de recréer continuellement l'environnement de test, les développeurs ont pu économiser un temps précieux.
     Cela leur a permis de se concentrer davantage sur le développement et les tests de l'application, au lieu de perdre du temps à configurer manuellement les environnements.
+    \item \textbf{Réduction du temps d'exécution des tests :} Le temps d'exécution du job de test a été réduit de 12 minutes 30 secondes à seulement 11 minutes 15 secondes.
 \end{itemize}
