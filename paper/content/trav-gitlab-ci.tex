@@ -1,11 +1,17 @@
 \newpage
 \section{Intégration continue}
+Je décris dans cette partie les technologies utilisées par l'entreprise dans le processus de test et de déploiement de l'application, l'environnement dans lequel cette application fonctionne et le travail que j'ai pu effectuer lors de mon stage.
+
 L'intégration continue (CI) est une pratique de développement logiciel visant à automatiser et à faciliter le processus de construction et de tests d'une application.
 
 Diagfit est construit et testé sur la plate-forme de gestion de développement GitLab à l'aide d'une série de tâches automatisées, appelées "jobs", qui sont exécutées séquentiellement en réponse aux changements du code source.
 
-\todo{intro qui dit integration continue et mon role dedans}
-\todo{remonter la mission confiée avec les pb avant et nouveau}
+
+
+Cependant, nous avons rencontré des problèmes avec la manière dont l'environnement de Diagfit était décrit.
+Ce processus était complexe, entraînant des divergences entre l'environnement de test local et celui de GitLab.
+Ma mission a consisté à simplifier ces descriptions pour une cohérence accrue.
+
 
 \subsection{Technologies utilisées}
 \subsubsection{Docker}
@@ -31,6 +37,7 @@ En utilisant la commande docker-compose up, il est possible de créer et lancer 
 
 De plus, Docker Compose simplifie la communication entre les conteneurs d'une application en mettant en place un réseau virtuel par défaut.
 Ceci permet aux services de se faire référence mutuellement par leur nom de service.
+
 
 \subsection{Environnement de développement}
 \subsubsection{Architecture globale de Diagfit}
@@ -65,6 +72,7 @@ Cependant, cette approche se révélait fastidieuse et entraînait des incohére
 La mission qui m'a été confiée fut d'optimiser le dockerfile et le fichier Docker Compose utilisés pour le logiciel Diagfit.
 
 J'ai aussi eu l'occasion de créer une image Docker et un fichier Docker Compose pour créer un environnement contrôlé utilisable pour la création du logiciel et également pour les tests des développeurs.
+
 
 \subsection{Missions effectuées et problèmes rencontrés}
 \subsubsection{Optimisation du dockerfile ci et docker compose}
