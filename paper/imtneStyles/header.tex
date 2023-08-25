@@ -5,9 +5,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[french]{babel}
+\usepackage{pifont}
 \usepackage{lmodern}
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{lipsum}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -25,7 +26,8 @@
 \usepackage{calc}
 \usepackage{tikz}
 \usepackage{adjustbox}
-\usepackage{pifont}
+\usepackage{pdfpages}
+\usepackage{ragged2e}
 
 \usepackage{paper/imtneStyles/imtnePageDeGarde}
 \usepackage{paper/imtneStyles/imtneChapitre}
@@ -37,12 +39,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \definecolor{imtneAmbre}{HTML}{fbba00}
-\definecolor{imtneAmbreText}{HTML}{f0ab00}
-\definecolor{imtneCeleste}{HTML}{00b8de}
 \definecolor{imtneCeleste}{HTML}{00b8de}
 \definecolor{imtneMarine}{HTML}{001f41}
-\definecolor{imtneMarineText}{HTML}{09192b}
 \definecolor{imtneGris}{HTML}{eaeaea}
+\definecolor{imtneAmbreText}{HTML}{f0ab00}
+\definecolor{imtneCelesteText}{HTML}{00b8de}
+\definecolor{imtneMarineText}{HTML}{09192b}
 \color{imtneMarineText} % Couleur du texte
 
 
@@ -77,7 +79,7 @@
 
 % Headers et Footers
 \fancyhead[L]{\includegraphics[width=2cm]{paper/figures/imtne.png}}
-\fancyhead[R]{\rightmark}
+% Titre du chapitre en haut à droite setup dans imtnechapitre
 \fancyfoot[LO]{\authorShort}
 \fancyfoot[LE]{\authorShort}
 

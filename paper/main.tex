@@ -1,27 +1,48 @@
 \documentclass[a4paper,12pt]{report}
 
-\newcommand{\authorShort}{Shaw E.} % Nom de l'auteur raccourci
-
 % Packages et configuration du header
 \input{paper/imtneStyles/header}
 
+\newcommand{\authorShort}{Auteur} % Nom de l'auteur raccourci
 
 \begin{document}
+\pagenumbering{Roman}
 % Page de garde
 \imtnepagedegarde
-    {Titre du stage} % Titre
-    {Rapport de stage sur le nucléaire} % Sous-titre
-    {Shaw Eliot} % Nom de l'auteur complet
-    {Institut Mines Télécom Nord Europe} % Nom de l'école complète
+    {Titre du document} % Titre du document
+    {Sous-titre du document} % Sous-titre du document
+    {Nom de l'auteur complet} % Nom de l'auteur complet
+    {Nom de l'école complète} % Nom de l'école complète
     {Promotion} % Promotion
-    {Tuteur école} % Nom du Tuteur de stage
-    {Maître de stage} % Nom du Maître de stage
+    {Nom du Tuteur de stage} % Nom du Tuteur de stage
+    {Nom du Maître de stage} % Nom du Maître de stage
     {paper/figures/company.pdf} % Logo entreprise
+
+% Remerciements
+\input{paper/content/remerciements}
 
 % Table des matières
 \tableofcontents
 \clearpage
 
-% Votre rapport
+% Mots Clés et Abstract
+\input{paper/content/abstract-keywords}
+
+\pagenumbering{arabic}
+% Content
+\imtnechapitre{Chapitre 1}
+\input{paper/content/ch1p1}
+\input{paper/content/ch1p2}
+
+\imtnepart{Part 1}
+\imtnechapitre{Chapitre 2}
+\input{paper/content/ch2p1}
+
+
+
+\cleardoublepage
+
+\imtnechapitre{Bibliographie et Annexes}
+\input{paper/content/annexes-biblio}
 
 \end{document}
