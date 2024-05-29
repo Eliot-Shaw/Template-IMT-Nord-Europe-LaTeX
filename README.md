@@ -3,6 +3,10 @@ Un template LaTeX pour les étudiants et professeurs (s'ils osent) correspondant
 
 [Petit exemple](paper/build/main.pdf)
 
-Pour build le projet, utilisez la commande :
+# Installation :
 
-```pdflatex -output-directory=paper/build paper/main.tex && pdflatex -output-directory=paper/build paper/main.tex```
+`sudo apt-get install texlive-full` 
+
+# Build :
+
+`pdflatex -output-directory=paper/build paper/main.tex && pdflatex -output-directory=paper/build paper/main.tex`
