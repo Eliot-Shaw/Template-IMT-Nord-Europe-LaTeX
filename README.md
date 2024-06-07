@@ -12,3 +12,5 @@ When at `Pregenerating ConTeXt MarkIV format. This may take some time...`, wait 
 # Build :
 
 `pdflatex -output-directory=paper/build paper/main.tex && pdflatex -output-directory=paper/build paper/main.tex`
+
+The pdf will be build on `paper/build/` directory as `main.pdf`
