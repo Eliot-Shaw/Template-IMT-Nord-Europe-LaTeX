@@ -6,6 +6,7 @@ Un template LaTeX pour les étudiants et professeurs (s'ils osent) correspondant
 # Installation :
 
 `sudo apt-get install texlive-full` 
+
 When at `Pregenerating ConTeXt MarkIV format. This may take some time...`, wait a bit and hit `Enter` a few times ;)
 
 # Build :
